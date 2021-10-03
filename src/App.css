@@ -9,3 +9,5 @@ body {
   -o-background: cover;
   background-size: cover;
 }
+
+::-webkit-scrollbar {display:none;} /* hide scrollbar */

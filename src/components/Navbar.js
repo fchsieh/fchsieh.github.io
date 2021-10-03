@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import MobileRightMenuSlider from "@material-ui/core/Drawer";
 import {
@@ -81,7 +81,7 @@ const Navbar = () => {
   const [state, setState] = useState({
     left: false,
   });
-  const [currentTab, setCurrentTab] = useState(window.location.pathname);
+  const [currentTab, setCurrentTab] = useState(useLocation().pathname);
 
   const toggleSlider = (slider, open) => () => {
     setState({ ...state, [slider]: open });
@@ -149,7 +149,12 @@ const Navbar = () => {
             <Tab label="Home" value="/" component={Link} to="/" />
             <Tab label="About" value="/about" component={Link} to="/about" />
             <Tab label="Resume" value="/resume" component={Link} to="/resume" />
-            <Tab label="Hire me" value="/hire" component={Link} to="/contact" />
+            <Tab
+              label="Hire me"
+              value="/contact"
+              component={Link}
+              to="/contact"
+            />
           </Tabs>
         </Toolbar>
       </AppBar>
