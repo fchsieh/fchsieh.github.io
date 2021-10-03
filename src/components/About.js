@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     color: "tan",
     textAlign: "center",
     padding: 10,
+    margin: "auto",
   },
   resumeItem: {
     color: "tan",

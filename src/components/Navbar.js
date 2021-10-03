@@ -31,6 +31,7 @@ import Footer from "./Footer";
 const useStyles = makeStyles((theme) => ({
   tabs: {
     marginLeft: "auto",
+    color: "tan",
   },
   menuSliderContainer: {
     background: "#511",
@@ -110,55 +111,54 @@ const Navbar = () => {
       </List>
     </Box>
   );
+  const transparent = currentTab === "/" ? "transparent" : "#222";
   return (
-    <Box component="nav">
-      <AppBar
-        style={{
-          background: "#222",
-          position: "fixed",
-          top: 0,
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleSlider("left", true)}
-          >
-            <MenuRounded style={{ color: "tomato" }} />
-          </IconButton>
-          <Typography variant="h5" style={{ color: "tan" }}>
-            FH
-          </Typography>
-          <MobileRightMenuSlider
-            anchor="left"
-            open={state.left}
-            onClose={toggleSlider("left", false)}
-          >
-            {sideList("left")}
-            <Footer />
-          </MobileRightMenuSlider>
-          <Tabs
-            className={classes.tabs}
-            value={currentTab}
-            onChange={(event, value) => {
-              setCurrentTab(value);
-            }}
-          >
-            <Tab label="Home" value="/" component={Link} to="/" />
-            <Tab label="About" value="/about" component={Link} to="/about" />
-            <Tab label="Resume" value="/resume" component={Link} to="/resume" />
-            <Tab
-              label="Hire me"
-              value="/contact"
-              component={Link}
-              to="/contact"
-            />
-          </Tabs>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <AppBar
+      style={{
+        background: transparent,
+        position: "sticky",
+        top: 0,
+      }}
+    >
+      <Toolbar>
+        <IconButton
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          onClick={toggleSlider("left", true)}
+        >
+          <MenuRounded style={{ color: "tomato" }} />
+        </IconButton>
+        <Typography variant="h5" style={{ color: "tan" }}>
+          FH
+        </Typography>
+        <MobileRightMenuSlider
+          anchor="left"
+          open={state.left}
+          onClose={toggleSlider("left", false)}
+        >
+          {sideList("left")}
+          <Footer />
+        </MobileRightMenuSlider>
+        <Tabs
+          className={classes.tabs}
+          value={currentTab}
+          onChange={(event, value) => {
+            setCurrentTab(value);
+          }}
+        >
+          <Tab label="Home" value="/" component={Link} to="/" />
+          <Tab label="About" value="/about" component={Link} to="/about" />
+          <Tab label="Resume" value="/resume" component={Link} to="/resume" />
+          <Tab
+            label="Hire me"
+            value="/contact"
+            component={Link}
+            to="/contact"
+          />
+        </Tabs>
+      </Toolbar>
+    </AppBar>
   );
 };
 
