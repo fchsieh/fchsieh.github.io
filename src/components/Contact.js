@@ -32,11 +32,28 @@ const Contact = () => {
   const classes = useStyles();
   const submitForm = (e) => {
     e.preventDefault();
-    console.log("First " + first);
-    console.log("Last " + last);
-    console.log("Email " + email);
-    console.log("Phone " + phone);
-    console.log("Message " + message);
+    const emailContent =
+      "Name:%20" +
+      first +
+      "%20" +
+      last +
+      "%0D%0APhone%20#:%20" +
+      phone +
+      "%0D%0AEmail:%20" +
+      email +
+      "%0D%0A------%0D%0A" +
+      message.replace(/\n/g, "%0D%0A") +
+      "%0D%0A";
+
+    window.open(
+      "mailto:fhsieh@uci.edu?subject=" +
+        first +
+        "%20" +
+        last +
+        "%20's%20message" +
+        "&body=" +
+        emailContent
+    );
   };
 
   return (
