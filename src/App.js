@@ -18,7 +18,7 @@ const theme = createTheme({
   },
 });
 
-function App() {
+const App = () => {
   return (
     <Router basename="/">
       <CssBaseline />
@@ -28,6 +28,6 @@ function App() {
       <Route path="/contact" component={Contact} />
     </Router>
   );
-}
+};
 
 export default App;

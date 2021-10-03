@@ -21,7 +21,7 @@ import {
   MenuRounded,
   AssignmentInd,
   Home,
-  Apps,
+  SchoolRounded,
   ContactMail,
 } from "@material-ui/icons";
 
@@ -67,14 +67,14 @@ const menuItems = [
     listPath: "/about",
   },
   {
-    listIcon: <Apps />,
-    listText: "Portfolio",
-    listPath: "/",
+    listIcon: <SchoolRounded />,
+    listText: "Resume",
+    listPath: "/resume",
   },
   {
     listIcon: <ContactMail />,
-    listText: "Contacts",
-    listPath: "/",
+    listText: "Contact",
+    listPath: "/contact",
   },
 ];
 
