@@ -129,9 +129,7 @@ const Navbar = () => {
         >
           <MenuRounded style={{ color: "tomato" }} />
         </IconButton>
-        <Typography variant="h5" style={{ color: "tan" }}>
-          FH
-        </Typography>
+
         <MobileRightMenuSlider
           anchor="left"
           open={state.left}

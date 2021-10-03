@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   box: {
     padding: "1rem",
+    margin: "auto",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -43,7 +44,7 @@ const Contact = () => {
       email +
       "%0D%0A------%0D%0A" +
       message.replace(/\n/g, "%0D%0A") +
-      "%0D%0A";
+      "%0D%0A%0D%0A";
 
     window.open(
       "mailto:fhsieh@uci.edu?subject=" +
@@ -60,7 +61,7 @@ const Contact = () => {
     <>
       <Navbar />
       <Box className={classes.box}>
-        <Typography variant="h2" className={classes.title}>
+        <Typography variant="h4" className={classes.title}>
           Contact Me
         </Typography>
         <div id="contact-container">

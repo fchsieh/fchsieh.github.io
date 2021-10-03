@@ -22,7 +22,7 @@ p.sub-title {
     border: 1px solid rgba(255, 255, 255, .2);
 
     .contact-info {
-        background-color: purple;
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 15px;
         flex: 0 1 40%;
         padding: 30px;
@@ -68,7 +68,7 @@ p.sub-title {
                 justify-content: center;
                 align-items: center;
                 border-radius: 50%;
-                background: purple;
+                background: rgba(255, 255, 255, 0.1);
                 transition: all .3s ease-in-out;
                 color: rgba(255, 255, 255, .7);
                 text-decoration: none;
@@ -102,8 +102,8 @@ p.sub-title {
             padding-right: 30px;
 
             label {
-                font-size: .9;
-                color: rgba(255, 255, 255, .6);
+                font-size: 1.2rem;
+                color: rgba(255, 255, 255, .8);
                 margin-bottom: 1rem;
             }
 
@@ -125,7 +125,7 @@ p.sub-title {
                 &:focus {
                     border: none;
                     outline: none;
-                    border-bottom: 2px solid purple;
+                    border-bottom: 2px solid tan;
                 }
             }
 
@@ -145,7 +145,7 @@ p.sub-title {
                 width: 200px;
                 height: 60px;
                 cursor: pointer;
-                background: white;
+                background: tan;
                 border: none;
                 text-transform: uppercase;
                 border-radius: 10px;

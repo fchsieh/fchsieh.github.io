@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: "tan",
     textAlign: "center",
-    padding: 10,
+    padding: "1rem",
     margin: "auto",
   },
   resumeItem: {
