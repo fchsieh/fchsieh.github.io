@@ -1,4 +1,6 @@
 import React from "react";
+import { Box } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { SkillBars } from "react-skills";
 
 const skillsData = [
@@ -29,16 +31,26 @@ const skillsData = [
   },
 ];
 
+const useStyles = makeStyles((theme) => ({
+  skillsBar: {
+    margin: "auto",
+    width: "80%",
+    background: "transparent",
+    backdropFilter: "blur(35px)",
+  },
+}));
+
 const Skills = () => {
+  const classes = useStyles();
   return (
-    <div style={{ width: "50%", marginLeft: "auto", marginRight: "auto" }}>
+    <Box className={classes.skillsBar}>
       <SkillBars
         skills={skillsData}
-        duration={4}
+        duration={3.5}
         flat={true}
         labelsWidth={80}
       />
-    </div>
+    </Box>
   );
 };
 

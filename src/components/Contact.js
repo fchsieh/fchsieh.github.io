@@ -62,7 +62,7 @@ const Contact = () => {
       <Navbar />
       <Box className={classes.box}>
         <Typography variant="h4" className={classes.title}>
-          Contact Me
+          Hire Me
         </Typography>
         <div id="contact-container">
           <div className="contact-info">

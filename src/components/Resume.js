@@ -23,16 +23,13 @@ const useStyles = makeStyles((theme) => ({
     padding: "1rem",
     margin: "auto",
   },
-  pdf: {
-    scale: "2",
-  },
 }));
 
 const Resume = () => {
   const width = useWindowWidth();
   const classes = useStyles();
   return (
-    <>
+    <div>
       <Navbar />
       <Box className={classes.pdfbox}>
         <Typography variant="h4" className={classes.title}>
@@ -47,7 +44,7 @@ const Resume = () => {
           ></Page>
         </Document>
       </Box>
-    </>
+    </div>
   );
 };
 
