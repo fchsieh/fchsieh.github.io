@@ -1,4 +1,5 @@
 import React from "react";
+import { useWindowWidth } from "@wojtekmaj/react-hooks";
 import { Box } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -22,9 +23,13 @@ const useStyles = makeStyles((theme) => ({
     padding: "1rem",
     margin: "auto",
   },
+  pdf: {
+    scale: "2",
+  },
 }));
 
 const Resume = () => {
+  const width = useWindowWidth();
   const classes = useStyles();
   return (
     <>
@@ -35,7 +40,11 @@ const Resume = () => {
         </Typography>
 
         <Document file={resumePdf}>
-          <Page pageNumber={1} renderTextLayer={false}></Page>
+          <Page
+            pageNumber={1}
+            renderTextLayer={false}
+            width={Math.min(width * 0.9, 1200)}
+          ></Page>
         </Document>
       </Box>
     </>

@@ -11,10 +11,15 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   title: {
+    padding: "1rem",
     color: "#fff",
   },
   subTitle: {
     color: "tan",
+  },
+  interests: {
+    color: "#fff",
+    paddingTop: "3rem",
   },
   typedContainer: {
     position: "absolute",
@@ -43,10 +48,9 @@ const Header = () => {
         <Typography className={classes.subTitle} variant="h4">
           <Typed
             strings={[
-              "I am a CS grad student @ UC Irvine",
-              "I am a full-stack developer",
-              "I have experience in Wi-Fi, cellular network, MEC, and IoT",
-              "I am interested in Machine Learning, Blockchain, and Web development",
+              "I'm a CS grad student @ UC Irvine",
+              "I'm a Full-stack developer",
+              "I have expereince in ML, Wi-Fi, Cellular, and IoT",
               "I am currently seeking an internship",
             ]}
             typeSpeed={65}
@@ -54,7 +58,12 @@ const Header = () => {
             backDelay={1500}
             cursorChar="_"
             smartBackspace
+            loop
           />
+        </Typography>
+        <Typography className={classes.interests} variant="h5">
+          I am interested in Web design, ML, Wireless, IoT, and
+          Stock/Cryptocurrency
         </Typography>
       </Box>
     </div>

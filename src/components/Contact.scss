@@ -26,11 +26,12 @@ p.sub-title {
         border-radius: 15px;
         flex: 0 1 40%;
         padding: 30px;
-        color: white;
         display: flex;
+        color: white;
         flex-direction: column;
 
         h4 {
+            color: tan;
             font-size: 2rem;
             font-weight: 300;
             margin: 0;
@@ -47,7 +48,7 @@ p.sub-title {
                 flex: 0 0 40px;
                 font-size: 1.8rem;
                 margin-right: 2rem;
-                color: rgba(255, 255, 255, .7);
+                color: tan;
             }
 
             span {
@@ -70,7 +71,7 @@ p.sub-title {
                 border-radius: 50%;
                 background: rgba(255, 255, 255, 0.1);
                 transition: all .3s ease-in-out;
-                color: rgba(255, 255, 255, .7);
+                color: tan;
                 text-decoration: none;
 
                 &:hover {

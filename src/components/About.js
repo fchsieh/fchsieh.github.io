@@ -34,6 +34,7 @@ const About = () => {
         My Skills
       </Typography>
       <Skills />
+      <br />
     </Box>
   );
 };
