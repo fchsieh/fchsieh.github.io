@@ -1,6 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography, Avatar, Grid, Box } from "@material-ui/core";
+import { Typography, Avatar, Grid, Box, Button } from "@material-ui/core";
+import Stack from "@mui/material/Stack";
+
 import Typed from "react-typed";
 
 //CSS Styles
@@ -11,24 +13,45 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   title: {
+    color: "white",
+    fontWeight: 700,
     padding: "1rem",
-    color: "#fff",
   },
   subTitle: {
-    color: "tan",
+    color: theme.palette.title.main,
+    fontFamily: "Lato",
   },
-  interests: {
-    color: "#fff",
-    paddingTop: "3rem",
+  button: {
+    background: theme.palette.button.light,
+    color: "white",
+    fontFamily: "Lato",
+    fontWeight: 400,
+    fontSize: "1rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  },
+  button_sub: {
+    background: theme.palette.button.main,
+    color: "white",
+    fontFamily: "Lato",
+    fontWeight: 400,
+    fontSize: "1rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
   },
   typedContainer: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "80vw",
+    margin: "auto",
+    marginTop: "10%",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
     textAlign: "center",
-    zIndex: 1,
   },
 }));
 
@@ -44,14 +67,13 @@ const Header = () => {
         <Typography className={classes.title} variant="h3">
           Fucheng Hsieh
         </Typography>
-        <br />
-        <Typography className={classes.subTitle} variant="h4">
+        <Typography className={classes.subTitle} variant="h5">
           <Typed
             strings={[
-              "I'm a CS grad student @ UC Irvine",
-              "I'm a Full-stack developer",
-              "I have expereince in ML, Wi-Fi, Cellular, and IoT",
-              "I am currently seeking an internship",
+              "CS grad @ UC Irvine",
+              "Full-stack developer",
+              "MERN Stack developer",
+              "Software Engineer",
             ]}
             typeSpeed={65}
             backSpeed={30}
@@ -61,10 +83,29 @@ const Header = () => {
             loop
           />
         </Typography>
-        <Typography className={classes.interests} variant="h5">
-          I am interested in Web design, ML, Wireless, IoT, and
-          Stock/Cryptocurrency
-        </Typography>
+        <br />
+        <Stack
+          justifyContent="center"
+          textAlign="center"
+          spacing={2}
+          direction="row"
+          paddingTop="2rem"
+        >
+          <Button
+            className={classes.button}
+            variant="outlined"
+            href="/#/contact"
+          >
+            Let's Talk?
+          </Button>
+          <Button
+            className={classes.button_sub}
+            variant="outlined"
+            href="/#/resume"
+          >
+            Resume
+          </Button>
+        </Stack>
       </Box>
     </div>
   );

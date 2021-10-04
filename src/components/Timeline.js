@@ -16,8 +16,11 @@ const useStyles = makeStyles((theme) => ({
     backdropFilter: "blur(35px)",
   },
   date: {
-    color: "#fff",
+    color: "#eefbfb",
     fontSize: "2rem",
+  },
+  timeLineElement: {
+    fontFamily: "Lato",
   },
 }));
 
@@ -29,13 +32,13 @@ const Timeline = () => {
         {TimelineItems.map((item, key) => {
           return (
             <VerticalTimelineElement
-              className={item.className}
+              className={classes.timeLineElement}
               key={key}
               date={item.date}
               dateClassName={classes.date}
               icon={item.icon === "work" ? <Work /> : <School />}
               iconStyle={{
-                background: "tomato",
+                background: "#007cc7",
                 color: "white",
               }}
             >

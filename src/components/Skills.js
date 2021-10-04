@@ -1,35 +1,60 @@
 import React from "react";
 import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { SkillBars } from "react-skills";
+import SkillBar from "react-skillbars";
 
-const skillsData = [
+const SKILLS = [
   {
-    name: "Python",
+    type: "Python",
     level: 100,
-    color: "tan",
+    color: "#007cc7",
   },
   {
-    name: "C/C++",
-    level: 95,
-    color: "tan",
-  },
-  {
-    name: "JavaScript",
+    type: "C/C++",
     level: 90,
-    color: "tan",
+    color: "#007cc7",
   },
   {
-    name: "Nodejs",
+    type: "JavaScript",
     level: 85,
-    color: "tan",
+    color: "#007cc7",
   },
   {
-    name: "React",
+    type: "React",
     level: 80,
-    color: "tan",
+    color: "#007cc7",
+  },
+  {
+    type: "Node",
+    level: 80,
+    color: "#007cc7",
+  },
+  {
+    type: "Docker",
+    level: 75,
+    color: "#007cc7",
+  },
+  {
+    type: "HTML/CSS",
+    level: 70,
+    color: "#007cc7",
   },
 ];
+
+const colors = {
+  bar: {
+    hue: 202.6,
+    saturation: 100,
+    level: {
+      minimum: 40,
+      maximum: 80,
+    },
+  },
+  title: {
+    text: "#eefbfb",
+    background: "#203647",
+  },
+};
 
 const useStyles = makeStyles((theme) => ({
   skillsBar: {
@@ -37,6 +62,10 @@ const useStyles = makeStyles((theme) => ({
     width: "80%",
     background: "transparent",
     backdropFilter: "blur(35px)",
+    fontFamily: "Lato",
+    "& span, & svg": {
+      fontSize: "1rem",
+    },
   },
 }));
 
@@ -44,12 +73,12 @@ const Skills = () => {
   const classes = useStyles();
   return (
     <Box className={classes.skillsBar}>
-      <SkillBars
-        skills={skillsData}
-        duration={3.5}
-        flat={true}
-        labelsWidth={80}
-      />
+      <SkillBar
+        skills={SKILLS}
+        colors={colors}
+        animationDelay={1000}
+        animationDuration={800}
+      ></SkillBar>
     </Box>
   );
 };

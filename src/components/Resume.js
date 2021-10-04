@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   title: {
-    color: "tan",
+    color: "#4da8da",
+    fontFamily: "Lato",
+    fontWeight: "bold",
     textAlign: "center",
     padding: "1rem",
     margin: "auto",

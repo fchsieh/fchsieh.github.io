@@ -11,11 +11,11 @@ import {
   ListItemText,
   Avatar,
   List,
-  Typography,
   Box,
   Divider,
   Tabs,
   Tab,
+  Typography,
 } from "@material-ui/core";
 import {
   MenuRounded,
@@ -31,10 +31,16 @@ import Footer from "./Footer";
 const useStyles = makeStyles((theme) => ({
   tabs: {
     marginLeft: "auto",
-    color: "tan",
+    color: "#eefbfb",
+  },
+  tab: {
+    fontFamily: "Lato",
+    "&:hover": {
+      color: "#4DA8DA",
+    },
   },
   menuSliderContainer: {
-    background: "#511",
+    background: "#203647",
     width: 250,
     height: "100%",
   },
@@ -47,11 +53,17 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
     marginTop: "4vh",
-    color: "tan",
+    background: "#4da8da",
     border: "2px solid",
   },
   listItem: {
-    color: "tan",
+    color: "#eefbfb",
+  },
+  list: {
+    "&:hover": {
+      background: "#007cc7",
+      color: "#eefbfb",
+    },
   },
 }));
 
@@ -94,17 +106,27 @@ const Navbar = () => {
       component="div"
       onClick={toggleSlider(slider, false)}
     >
-      <Avatar className={classes.avatar} src="" alt="Fred Hsieh" />
+      <Avatar className={classes.avatar} src="" alt="Fucheng Hsieh" />
       <Divider className={classes.divider} />
       <List>
         {menuItems.map((lsItem, key) => (
-          <ListItem button key={key} component={Link} to={lsItem.listPath}>
+          <ListItem
+            button
+            key={key}
+            component={Link}
+            className={classes.list}
+            to={lsItem.listPath}
+          >
             <ListItemIcon className={classes.listItem}>
               {lsItem.listIcon}
             </ListItemIcon>
             <ListItemText
               className={classes.listItem}
-              primary={lsItem.listText}
+              primary={
+                <Typography variant="h6" style={{ fontFamily: "Lato" }}>
+                  {lsItem.listText}
+                </Typography>
+              }
             />
           </ListItem>
         ))}
@@ -127,7 +149,7 @@ const Navbar = () => {
           aria-label="menu"
           onClick={toggleSlider("left", true)}
         >
-          <MenuRounded style={{ color: "tomato" }} />
+          <MenuRounded style={{ color: "#4dabda" }} />
         </IconButton>
 
         <MobileRightMenuSlider
@@ -141,17 +163,38 @@ const Navbar = () => {
         <Tabs
           className={classes.tabs}
           value={currentTab}
+          indicatorColor="primary"
+          variant="scrollable"
           onChange={(event, value) => {
             setCurrentTab(value);
           }}
         >
-          <Tab label="Home" value="/" component={Link} to="/" />
-          <Tab label="About" value="/about" component={Link} to="/about" />
-          <Tab label="Resume" value="/resume" component={Link} to="/resume" />
           <Tab
-            label="Hire me"
+            label="Home"
+            value="/"
+            component={Link}
+            className={classes.tab}
+            to="/"
+          />
+          <Tab
+            label="About"
+            value="/about"
+            component={Link}
+            className={classes.tab}
+            to="/about"
+          />
+          <Tab
+            label="Resume"
+            value="/resume"
+            component={Link}
+            className={classes.tab}
+            to="/resume"
+          />
+          <Tab
+            label="Contact"
             value="/contact"
             component={Link}
+            className={classes.tab}
             to="/contact"
           />
         </Tabs>

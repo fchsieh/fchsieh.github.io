@@ -9,13 +9,12 @@ import Skills from "./Skills";
 // CSS styles
 const useStyles = makeStyles((theme) => ({
   title: {
-    color: "tan",
+    color: "#4da8da",
+    fontFamily: "Lato",
+    fontWeight: "bold",
     textAlign: "center",
     padding: "1rem",
     margin: "auto",
-  },
-  resumeItem: {
-    color: "tan",
   },
 }));
 

@@ -8,12 +8,16 @@ import "./Contact.scss";
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    color: "tan",
+    color: "#4da8da",
+    fontFamily: "Lato",
+    fontWeight: "bold",
     margin: "auto",
     textAlign: "center",
     paddingBottom: "50px",
   },
   box: {
+    fontFamily: "Lato",
+    fontWeight: "bold",
     padding: "1rem",
     margin: "auto",
     display: "flex",
@@ -62,7 +66,7 @@ const Contact = () => {
       <Navbar />
       <Box className={classes.box}>
         <Typography variant="h4" className={classes.title}>
-          Hire Me
+          Contact Me
         </Typography>
         <div id="contact-container">
           <div className="contact-info">
