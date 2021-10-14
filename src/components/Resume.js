@@ -5,7 +5,6 @@ import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 
-import Navbar from "./Navbar";
 import resumePdf from "./resume.pdf";
 
 const useStyles = makeStyles((theme) => ({
@@ -32,9 +31,8 @@ const Resume = () => {
   const classes = useStyles();
   return (
     <div>
-      <Navbar />
       <Box className={classes.pdfbox}>
-        <Typography variant="h4" className={classes.title}>
+        <Typography variant="h3" className={classes.title}>
           Resume
         </Typography>
 
@@ -42,7 +40,7 @@ const Resume = () => {
           <Page
             pageNumber={1}
             renderTextLayer={false}
-            width={Math.min(width * 0.9, 1200)}
+            width={Math.min(width * 0.8, 800)}
           ></Page>
         </Document>
       </Box>

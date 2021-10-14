@@ -2,8 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Avatar, Grid, Box, Button } from "@material-ui/core";
 import Stack from "@mui/material/Stack";
-
 import Typed from "react-typed";
+import { Link } from "react-scroll";
 
 //CSS Styles
 const useStyles = makeStyles((theme) => ({
@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
+    height: "80vh",
   },
 }));
 
@@ -92,16 +93,22 @@ const Header = () => {
           paddingTop="2rem"
         >
           <Button
+            component={Link}
             className={classes.button}
             variant="outlined"
-            href="/#/contact"
+            to="contact"
+            smooth
+            duration={500}
           >
             Let's Talk?
           </Button>
           <Button
+            component={Link}
             className={classes.button_sub}
             variant="outlined"
-            href="/#/resume"
+            to="resume"
+            smooth
+            duration={500}
           >
             Resume
           </Button>

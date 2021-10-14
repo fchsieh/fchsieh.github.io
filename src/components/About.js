@@ -1,8 +1,7 @@
 import React from "react";
-import { Typography, Box } from "@material-ui/core";
+import { Typography, Box, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import Navbar from "./Navbar";
 import Timeline from "./Timeline";
 import Skills from "./Skills";
 
@@ -21,20 +20,19 @@ const useStyles = makeStyles((theme) => ({
 const About = () => {
   const classes = useStyles();
   return (
-    <Box component="header">
-      <Navbar />
-      <Box>
-        <Typography variant="h4" className={classes.title}>
-          Work experience & Education
+    <div className="container">
+      <Container>
+        <Typography variant="h3" className={classes.title}>
+          About me
         </Typography>
-        <Timeline />
-      </Box>
-      <Typography variant="h4" className={classes.title}>
-        My Skills
-      </Typography>
-      <Skills />
-      <br />
-    </Box>
+        <Box p={5}>
+          <Timeline />
+        </Box>
+        <Box p={5}>
+          <Skills />
+        </Box>
+      </Container>
+    </div>
   );
 };
 

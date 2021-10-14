@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import Navbar from "./Navbar";
 import "./Contact.scss";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     margin: "auto",
     textAlign: "center",
-    paddingBottom: "50px",
+    paddingBottom: "30px",
   },
   box: {
     fontFamily: "Lato",
@@ -24,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    height: "100vh",
+    paddingBottom: "10rem",
   },
 }));
 
@@ -63,9 +64,8 @@ const Contact = () => {
 
   return (
     <>
-      <Navbar />
       <Box className={classes.box}>
-        <Typography variant="h4" className={classes.title}>
+        <Typography variant="h3" className={classes.title}>
           Contact Me
         </Typography>
         <div id="contact-container">

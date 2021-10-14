@@ -1,16 +1,21 @@
 import React from "react";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { Element } from "react-scroll";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import {
   MuiThemeProvider,
   unstable_createMuiStrictModeTheme as createTheme,
 } from "@material-ui/core/styles";
+import Fab from "@mui/material/Fab";
+import { KeyboardArrowUp } from "@material-ui/icons";
+
 import "./App.css";
 
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Resume from "./components/Resume";
 import Contact from "./components/Contact";
+import ScrollTop from "./components/ScrollTop";
 
 const theme = createTheme({
   typography: {
@@ -43,13 +48,28 @@ const theme = createTheme({
 const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
-      <Router basename="/">
+      <div>
         <CssBaseline />
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/resume" component={Resume} />
-        <Route path="/contact" component={Contact} />
-      </Router>
+
+        <Navbar />
+        <Element id="home">
+          <Home />
+        </Element>
+        <Element id="about">
+          <About />
+        </Element>
+        <Element id="resume">
+          <Resume />
+        </Element>
+        <Element id="contact">
+          <Contact />
+        </Element>
+        <ScrollTop>
+          <Fab color="#4dabda" size="medium" aria-label="scroll back to top">
+            <KeyboardArrowUp />
+          </Fab>
+        </ScrollTop>
+      </div>
     </MuiThemeProvider>
   );
 };
