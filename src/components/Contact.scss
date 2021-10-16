@@ -25,7 +25,7 @@ p.sub-title {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 15px;
         flex: 0 1 40%;
-        padding: 30px;
+        padding: 10px;
         display: flex;
         color: #eefbfb;
         flex-direction: column;
@@ -54,33 +54,6 @@ p.sub-title {
             span {
                 font-size: 1.3rem;
                 font-weight: 400;
-            }
-        }
-
-        .social-media {
-            display: flex;
-            width: 50%;
-            justify-content: space-between;
-
-            .icon-circle {
-                flex: 0 1 45px;
-                height: 45px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.1);
-                transition: all .3s ease-in-out;
-                color: #007cc7;
-                text-decoration: none;
-
-                &:hover {
-                    background: rgba(255, 255, 255, .7)
-                }
-
-                .fab {
-                    font-size: 25px;
-                }
             }
         }
     }

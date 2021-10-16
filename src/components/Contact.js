@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "30px",
   },
   box: {
-    padding: theme.spacing(10, 0, 20, 0),
+    padding: theme.spacing(15, 0, 15, 0),
     fontFamily: "Lato",
     fontWeight: "bold",
     margin: "auto",
@@ -37,18 +37,22 @@ const useStyles = makeStyles((theme) => ({
     color: "#4da8da",
     fontFamily: "Lato",
     fontWeight: 700,
+    justifyContent: "center",
+    display: "flex",
+    padding: theme.spacing(4, 4, 0, 4),
   },
   iconText: {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
     marginBottom: "2rem",
+    marginLeft: "2rem",
     fontSize: "1.3rem",
     fontWeight: 400,
   },
   icon: {
     flex: "0 0 40px",
-    marginRight: "2rem",
+    marginRight: "1.5rem",
     color: "#007cc7",
   },
   socialIcon: {
@@ -60,10 +64,17 @@ const useStyles = makeStyles((theme) => ({
     height: "56px",
     width: "56px",
     alignItems: "center",
-    marginRight: "2rem",
+    marginRight: "1rem",
+    marginLeft: "1rem",
     "&:hover": {
       background: "rgba(255, 255, 255, .7)",
     },
+  },
+  socialMedia: {
+    display: "flex",
+    justifyContent: "space-between",
+    width: "50%",
+    marginLeft: "1rem",
   },
 }));
 
@@ -105,7 +116,7 @@ const Contact = () => {
     <>
       <Box className={classes.box}>
         <Typography variant="h3" className={classes.title}>
-          Contact Me
+          Talk To Me
         </Typography>
         <Box id="contact-container">
           <Box className="contact-info">
@@ -127,7 +138,7 @@ const Contact = () => {
               <ExploreRounded className={classes.icon} fontSize="large" />
               Irvine, CA 92612
             </Box>
-            <Box className="social-media">
+            <Box className={classes.socialMedia}>
               <IconButton
                 className={classes.socialIcon}
                 href="https://www.linkedin.com/in/freddiehsieh/"

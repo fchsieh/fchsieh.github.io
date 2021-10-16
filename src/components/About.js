@@ -17,16 +17,18 @@ import {
   DnsOutlined,
 } from "@mui/icons-material";
 
+import "./About.css";
+
 // CSS styles
 const useStyles = makeStyles((theme) => ({
   section: {
-    backgroundColor: "rgba(0, 124, 199, 0.85)",
-    padding: theme.spacing(10, 0, 8, 0),
+    backgroundColor: "rgba(0, 124, 199, 0.35)",
+    backdropFilter: "blur(55px)",
+    padding: theme.spacing(15, 0, 15, 0),
     margin: "auto",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    textAlign: "center",
     display: "flex",
   },
   responsiveImg: {
@@ -59,9 +61,12 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Lato",
     fontSize: "1.2rem",
     color: "#eefbfb",
+    textAlign: "left",
+    paddingTop: "10px",
   },
   sectionHeadCont: {
-    padding: theme.spacing(5),
+    paddingBottom: theme.spacing(10),
+    paddingLeft: theme.spacing(10),
     color: "#eefbfb",
     justifyContent: "center",
     alignItems: "center",
@@ -77,16 +82,24 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.3rem",
   },
   myUnderline: {
+    color: "#4da8da",
     fontSize: "1.3rem",
     fontWeight: 700,
     paddingBottom: "1.5px",
-    borderBottom: "2px solid #eefbfb",
+    borderBottom: "2px solid #4da8da",
   },
   divider: {
     width: "64px",
     height: "4px",
     backgroundColor: "#eefbfb",
-    margin: "20px 0",
+    margin: "15px 0",
+  },
+  waving: {
+    animationName: "wave-animation",
+    animationDuration: "2.5s",
+    animationIterationCount: "infinite",
+    transformOrigin: "70% 70%",
+    display: "inline-block",
   },
 }));
 
@@ -94,22 +107,25 @@ const aboutData = [
   {
     title: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis viverra dui. Maecenas eget maximus quam.",
+      "Experienced in JavaScript, React, Node, and HTML/CSS. This website is built with React and Material UI!",
     icon: <Dashboard fontSize="large" />,
   },
   {
-    title: "Wireless Network",
-    description: "Lorem ipsum dolor sit amet Consectetur adipisicing elit.",
+    title: "Network & IoT",
+    description:
+      "One-year work experience in developing 4G/5G MEC and IoT applications. Professional in setting OpenWRT",
     icon: <FiveG fontSize="large" />,
   },
   {
     title: "Deep Learning",
-    description: "Lorem ipsum dolor sit amet Consectetur adipisicing elit.",
+    description:
+      "Collaborated with a local firm and built an Automatic Fabric Defect Detection app using Keras and DL models to increase the production yield",
     icon: <SmartToyOutlined fontSize="large" />,
   },
   {
     title: "System Admin",
-    description: "Lorem ipsum dolor sit amet Consectetur adipisicing elit.",
+    description:
+      "Experienced in using Linux services, including Apache and Nginx. Built a Class Schedule Maker using Bash commands",
     icon: <DnsOutlined fontSize="large" />,
   },
 ];
@@ -133,32 +149,45 @@ const About = () => {
             <Grid item xs={12} sm={7}>
               <Box className={classes.sectionHeadCont}>
                 <Typography
-                  variant="h4"
+                  variant="h2"
                   align="left"
                   className={classes.sectionHeading}
                 >
-                  Hello! I am Fucheng Hsieh.
+                  Hello! I am Fucheng Hsieh.{" "}
+                  <span className={classes.waving}>👋</span>
                 </Typography>
                 <Divider className={classes.divider} />
                 <Typography
-                  variant="body1"
-                  component="h6"
+                  variant="caption"
                   align="left"
                   className={classes.sectionDesc}
                 >
-                  Computer Science graduate student at UC Irvine.
-                  <br />
-                  Passionate about{" "}
+                  I am a{"  "}
+                  <span className={classes.myUnderline}>Computer Science</span>
+                  {"  "}
+                  Grad Student at UC Irvine.
+                </Typography>
+                <br />
+                <br />
+                <Typography
+                  variant="caption"
+                  align="left"
+                  className={classes.sectionDesc}
+                >
+                  I enjoy{"  "}
                   <span className={classes.myUnderline}>
-                    Web Development
-                  </span>,{" "}
-                  <span className={classes.myUnderline}>Wireless Network</span>,{" "}
-                  <span className={classes.myUnderline}>Deep Learning</span>,
-                  and{" "}
-                  <span className={classes.myUnderline}>
-                    System Administration
+                    Developing Websites
                   </span>
-                  .
+                  {"  "}, building{"  "}
+                  <span className={classes.myUnderline}>
+                    Network Applications
+                  </span>
+                  {"  "}, and making{"  "}
+                  <span className={classes.myUnderline}>Deep Learning</span>
+                  {"  "}
+                  projects. Also, I am interested in{"  "}
+                  <span className={classes.myUnderline}>Cloud Computing</span>
+                  {"  "}.
                 </Typography>
               </Box>
               <Grid container>
@@ -168,12 +197,12 @@ const About = () => {
                       <Grid item xs={3} className={classes.AvatarCont}>
                         <Avatar className={classes.Avatar}>{item.icon}</Avatar>
                       </Grid>
-                      <Grid item xs={9} className={classes.MediaText}>
+                      <Grid item xs={9}>
                         <Typography variant="h6" className={classes.CardTitle}>
                           {item.title}
                         </Typography>
                         <Typography
-                          variant="caption"
+                          variant="body2"
                           className={classes.CardText}
                         >
                           {item.description}

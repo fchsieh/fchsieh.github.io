@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { Link } from "react-scroll";
 import {
   AppBar,
   Toolbar,
   Tabs,
   Tab,
+  Typography,
   useScrollTrigger,
   Slide,
 } from "@material-ui/core";
@@ -18,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
     color: "#eefbfb",
   },
   tab: {
+    minWidth: 100,
+    width: 100,
     fontFamily: "Lato",
     "&:hover": {
       color: "#4DA8DA",
@@ -49,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 const tabs = [
   { label: "Home", key: "home" },
   { label: "About", key: "about" },
+  { label: "Projects", key: "projects" },
   { label: "Skills", key: "skills" },
   { label: "Contact", key: "contact" },
 ];
@@ -66,12 +69,18 @@ const Navbar = () => {
   const classes = useStyles();
   const [activeTab, setActiveTab] = useState("home");
 
-  const transparent = activeTab === "home" ? "transparent" : "#222";
+  const transparent = activeTab === "home" ? "rgba(255,255,255,0.1)" : "#222";
   return (
     <>
       <HideOnScroll>
         <AppBar style={{ background: transparent, top: 0 }}>
           <Toolbar>
+            <Typography
+              variant="h5"
+              style={{ color: "#eefbfb", fontFamily: "Lato" }}
+            >
+              Fucheng.
+            </Typography>
             <Tabs
               className={classes.tabs}
               value={activeTab}
