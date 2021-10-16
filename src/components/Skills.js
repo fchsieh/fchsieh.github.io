@@ -68,44 +68,46 @@ const portfolioData = [
 const Skills = () => {
   const classes = useStyles();
   return (
-    <Box className={classes.section}>
-      <Grid
-        container
-        style={{
-          displa: "flex",
-          justifyContent: "center",
-          alignContent: "center",
-        }}
-      >
-        <Grid item xs={12} sm={8}>
-          {}
+    <>
+      <Box className={classes.section}>
+        <Grid
+          container
+          style={{
+            displa: "flex",
+            justifyContent: "center",
+            alignContent: "center",
+          }}
+        >
+          <Grid item xs={12} sm={8}>
+            {}
+          </Grid>
         </Grid>
-      </Grid>
-      <Container maxWidth="lg">
-        <Grid container spacing={2}>
-          {portfolioData.map((item, i) => (
-            <Grid item xs={6} sm={6} lg={4} key={i}>
-              <Box className={classes.imageContainer}>
-                <img
-                  src={item.url}
-                  alt={item.title}
-                  className={classes.responsiveImg}
-                />
-                <Box className={classes.imageOverlay}>
-                  <Typography className={classes.overlayTitle}>
-                    {item.title}
-                  </Typography>
+        <Container maxWidth="lg">
+          <Grid container spacing={2}>
+            {portfolioData.map((item, i) => (
+              <Grid item xs={6} sm={6} lg={4} key={i}>
+                <Box className={classes.imageContainer}>
+                  <img
+                    src={item.url}
+                    alt={item.title}
+                    className={classes.responsiveImg}
+                  />
+                  <Box className={classes.imageOverlay}>
+                    <Typography className={classes.overlayTitle}>
+                      {item.title}
+                    </Typography>
 
-                  <Button variant="contained" className={classes.overlayText}>
-                    Visit
-                  </Button>
+                    <Button variant="contained" className={classes.overlayText}>
+                      Visit
+                    </Button>
+                  </Box>
                 </Box>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+    </>
   );
 };
 

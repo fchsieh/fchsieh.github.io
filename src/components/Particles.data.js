@@ -5,14 +5,13 @@ const particleParams = {
   },
   particles: {
     number: {
-      value: 240,
+      value: 80,
       density: {
         enable: false,
-        value_area: 800,
       },
     },
     color: {
-      value: "#ffffff",
+      value: "#fff",
     },
     shape: {
       type: "circle",
@@ -40,7 +39,7 @@ const particleParams = {
     line_linked: {
       enable: false,
       distance: 150,
-      color: "#ffffff",
+      color: "#fff",
       opacity: 0.4,
       width: 1,
     },
@@ -56,45 +55,6 @@ const particleParams = {
         enable: false,
         rotateX: 600,
         rotateY: 600,
-      },
-    },
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: true,
-        mode: "bubble",
-      },
-      onclick: {
-        enable: true,
-        mode: "repulse",
-      },
-      resize: true,
-    },
-    modes: {
-      grab: {
-        distance: 400,
-        line_linked: {
-          opacity: 1,
-        },
-      },
-      bubble: {
-        distance: 250,
-        size: 0,
-        duration: 2,
-        opacity: 0,
-        speed: 3,
-      },
-      repulse: {
-        distance: 400,
-        duration: 0.4,
-      },
-      push: {
-        particles_nb: 4,
-      },
-      remove: {
-        particles_nb: 2,
       },
     },
   },

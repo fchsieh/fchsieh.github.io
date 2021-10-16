@@ -5,10 +5,16 @@ import Stack from "@mui/material/Stack";
 import Typed from "react-typed";
 import { Link } from "react-scroll";
 
+import Particles from "react-particles-js";
+import particleParams from "./Particles.data";
 import Resume from "./data/resume.pdf";
 
 //CSS Styles
 const useStyles = makeStyles((theme) => ({
+  particlesCanvas: {
+    position: "absolute",
+    opacity: 0.5,
+  },
   avatar: {
     width: theme.spacing(15),
     height: theme.spacing(15),
@@ -62,7 +68,11 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <div>
+    <>
+      <Particles
+        canvasClassName={classes.particlesCanvas}
+        params={particleParams}
+      />
       <Box className={classes.typedContainer}>
         <Grid container justifyContent="center">
           <Avatar className={classes.avatar} src="" alt="Fred Hsieh" />
@@ -114,7 +124,7 @@ const Header = () => {
           </Button>
         </Stack>
       </Box>
-    </div>
+    </>
   );
 };
 

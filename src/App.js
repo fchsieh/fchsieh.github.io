@@ -11,7 +11,7 @@ import { KeyboardArrowUp } from "@material-ui/icons";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
@@ -46,12 +46,12 @@ const theme = createTheme({
 
 const App = () => {
   return (
-    <MuiThemeProvider theme={theme}>
-      <div>
+    <>
+      <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <Navbar />
         <Element id="home">
-          <Home />
+          <Header />
         </Element>
         <Element id="about">
           <About />
@@ -71,8 +71,8 @@ const App = () => {
             <KeyboardArrowUp />
           </Fab>
         </ScrollTop>
-      </div>
-    </MuiThemeProvider>
+      </MuiThemeProvider>
+    </>
   );
 };
 
