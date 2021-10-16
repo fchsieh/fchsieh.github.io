@@ -21,7 +21,6 @@ const theme = createTheme({
   typography: {
     fontFamily: ["Merriweather", "Lato"].join(","),
     fontSize: 14,
-    fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 700,
   },

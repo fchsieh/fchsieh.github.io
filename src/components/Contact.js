@@ -2,6 +2,14 @@ import React from "react";
 import { useState } from "react";
 import { Typography, Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import {
+  LocalPhoneRounded,
+  AlternateEmailRounded,
+  ExploreRounded,
+  Facebook,
+  LinkedIn,
+  GitHub,
+} from "@mui/icons-material";
 
 import "./Contact.scss";
 
@@ -30,6 +38,19 @@ const useStyles = makeStyles((theme) => ({
     color: "#4da8da",
     fontFamily: "Lato",
     fontWeight: 700,
+  },
+  iconText: {
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginBottom: "2rem",
+    fontSize: "1.3rem",
+    fontWeight: 400,
+  },
+  icon: {
+    flex: "0 0 40px",
+    marginRight: "2rem",
+    color: "#007cc7",
   },
 }));
 
@@ -78,17 +99,20 @@ const Contact = () => {
             <Typography variant="h4" className={classes.cardTitle}>
               Contact Information
             </Typography>
-            <Box className="icon-text">
-              <i className="fa fa-phone" aria-hidden="true"></i>
-              <span>714-280-5665</span>
+            <Box className={classes.iconText}>
+              <LocalPhoneRounded className={classes.icon} fontSize="large" />
+              714-280-5665
             </Box>
-            <Box className="icon-text">
-              <i className="fa fa-at" aria-hidden="true"></i>
-              <span>fhsieh@uci.edu</span>
+            <Box className={classes.iconText}>
+              <AlternateEmailRounded
+                className={classes.icon}
+                fontSize="large"
+              />
+              fhsieh@uci.edu
             </Box>
-            <Box className="icon-text">
-              <i className="fa fa-map-marker-alt" aria-hidden="true"></i>
-              <span>Irvine, CA 92612</span>
+            <Box className={classes.iconText}>
+              <ExploreRounded className={classes.icon} fontSize="large" />
+              Irvine, CA 92612
             </Box>
             <Box className="social-media">
               <a
@@ -97,7 +121,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className="fab fa-linkedin"></i>
+                <LinkedIn />
               </a>
               <a
                 className="icon-circle"
@@ -105,7 +129,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className="fab fa-github-square"></i>
+                <GitHub />
               </a>
               <a
                 className="icon-circle"
@@ -113,7 +137,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className="fab fa-facebook-square"></i>
+                <Facebook />
               </a>
             </Box>
           </Box>

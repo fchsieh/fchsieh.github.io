@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Grid, Container, Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ScrollAnimation from "react-animate-on-scroll";
 
 import image1 from "../images/5-2.jpg";
 import image2 from "../images/5-3.jpg";
@@ -70,44 +69,42 @@ const Skills = () => {
   const classes = useStyles();
   return (
     <Box className={classes.section}>
-      <ScrollAnimation animateIn="fadeIn">
-        <Grid
-          container
-          style={{
-            displa: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          <Grid item xs={12} sm={8}>
-            {}
-          </Grid>
+      <Grid
+        container
+        style={{
+          displa: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+        }}
+      >
+        <Grid item xs={12} sm={8}>
+          {}
         </Grid>
-        <Container maxWidth="lg">
-          <Grid container spacing={2}>
-            {portfolioData.map((item, i) => (
-              <Grid item xs={6} sm={6} lg={4} key={i}>
-                <Box className={classes.imageContainer}>
-                  <img
-                    src={item.url}
-                    alt={item.title}
-                    className={classes.responsiveImg}
-                  />
-                  <Box className={classes.imageOverlay}>
-                    <Typography className={classes.overlayTitle}>
-                      {item.title}
-                    </Typography>
+      </Grid>
+      <Container maxWidth="lg">
+        <Grid container spacing={2}>
+          {portfolioData.map((item, i) => (
+            <Grid item xs={6} sm={6} lg={4} key={i}>
+              <Box className={classes.imageContainer}>
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  className={classes.responsiveImg}
+                />
+                <Box className={classes.imageOverlay}>
+                  <Typography className={classes.overlayTitle}>
+                    {item.title}
+                  </Typography>
 
-                    <Button variant="contained" className={classes.overlayText}>
-                      Visit
-                    </Button>
-                  </Box>
+                  <Button variant="contained" className={classes.overlayText}>
+                    Visit
+                  </Button>
                 </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </ScrollAnimation>
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
     </Box>
   );
 };

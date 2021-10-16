@@ -91,7 +91,7 @@ const Navbar = () => {
                     spy
                     isDynamic
                     smooth
-                    duration={500}
+                    duration={600}
                     onSetActive={(e) => {
                       setActiveTab(e);
                     }}

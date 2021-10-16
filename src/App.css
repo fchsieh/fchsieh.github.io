@@ -8,7 +8,7 @@ body {
   -moz-background: cover;
   -o-background: cover;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 }
 

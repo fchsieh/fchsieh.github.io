@@ -9,7 +9,6 @@ import {
   Divider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ScrollAnimation from "react-animate-on-scroll";
 import image from "../images/aboutme.jpg";
 import {
   Dashboard,
@@ -113,75 +112,72 @@ const About = () => {
   const classes = useStyles();
   return (
     <Box className={classes.section} id="About">
-      <ScrollAnimation animateIn="fadeIn">
-        <Container>
-          <Grid container spacing={5}>
-            <Grid item sm={5}>
-              <Box component={Hidden} xsDown>
-                <img
-                  src={image}
-                  alt=" about us"
-                  className={classes.responsiveImg}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={7}>
-              <Box className={classes.sectionHeadCont}>
-                <Typography
-                  variant="h4"
-                  align="left"
-                  className={classes.sectionHeading}
-                >
-                  Hello! I am Fucheng Hsieh.
-                </Typography>
-                <Divider className={classes.divider} />
-                <Typography
-                  variant="body1"
-                  component="h6"
-                  align="left"
-                  className={classes.sectionDesc}
-                >
-                  Computer Science graduate student at UC Irvine.
-                  <br />
-                  Passionate about{" "}
-                  <span className={classes.myUnderline}>
-                    Web Development
-                  </span>,{" "}
-                  <span className={classes.myUnderline}>Wireless Network</span>,{" "}
-                  <span className={classes.myUnderline}>Deep Learning</span>,
-                  and{" "}
-                  <span className={classes.myUnderline}>
-                    System Administration
-                  </span>
-                  .
-                </Typography>
-              </Box>
-              <Grid container>
-                {aboutData.map((item, i) => (
-                  <Grid item xs={12} sm={6} key={i}>
-                    <Grid container style={{ marginTop: "16px" }}>
-                      <Grid item xs={3} className={classes.AvatarCont}>
-                        <Avatar className={classes.Avatar}>{item.icon}</Avatar>
-                      </Grid>
-                      <Grid item xs={9} className={classes.MediaText}>
-                        <Typography variant="h6" className={classes.CardTitle}>
-                          {item.title}
-                        </Typography>
-                        <Typography
-                          variant="caption"
-                          className={classes.CardText}
-                        >
-                          {item.description}
-                        </Typography>
-                      </Grid>
+      <Container>
+        <Grid container spacing={5}>
+          <Grid item sm={5}>
+            <Box component={Hidden} xsDown>
+              <img
+                src={image}
+                alt=" about us"
+                className={classes.responsiveImg}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={7}>
+            <Box className={classes.sectionHeadCont}>
+              <Typography
+                variant="h4"
+                align="left"
+                className={classes.sectionHeading}
+              >
+                Hello! I am Fucheng Hsieh.
+              </Typography>
+              <Divider className={classes.divider} />
+              <Typography
+                variant="body1"
+                component="h6"
+                align="left"
+                className={classes.sectionDesc}
+              >
+                Computer Science graduate student at UC Irvine.
+                <br />
+                Passionate about{" "}
+                <span className={classes.myUnderline}>
+                  Web Development
+                </span>,{" "}
+                <span className={classes.myUnderline}>Wireless Network</span>,{" "}
+                <span className={classes.myUnderline}>Deep Learning</span>, and{" "}
+                <span className={classes.myUnderline}>
+                  System Administration
+                </span>
+                .
+              </Typography>
+            </Box>
+            <Grid container>
+              {aboutData.map((item, i) => (
+                <Grid item xs={12} sm={6} key={i}>
+                  <Grid container style={{ marginTop: "16px" }}>
+                    <Grid item xs={3} className={classes.AvatarCont}>
+                      <Avatar className={classes.Avatar}>{item.icon}</Avatar>
+                    </Grid>
+                    <Grid item xs={9} className={classes.MediaText}>
+                      <Typography variant="h6" className={classes.CardTitle}>
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="caption"
+                        className={classes.CardText}
+                      >
+                        {item.description}
+                      </Typography>
                     </Grid>
                   </Grid>
-                ))}
-              </Grid>
+                </Grid>
+              ))}
             </Grid>
           </Grid>
-        </Container>
-      </ScrollAnimation>
+        </Grid>
+      </Container>
     </Box>
   );
 };
