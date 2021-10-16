@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Box, Zoom, useScrollTrigger } from "@mui/material";
 
-function ScrollTop(props) {
+const ScrollTop = (props) => {
   const { children, window } = props;
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
@@ -26,13 +26,12 @@ function ScrollTop(props) {
     <Zoom in={trigger}>
       <Box
         onClick={handleClick}
-        role="presentation"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
+        sx={{ position: "fixed", bottom: 32, right: 32 }}
       >
         {children}
       </Box>
     </Zoom>
   );
-}
+};
 
 export default ScrollTop;

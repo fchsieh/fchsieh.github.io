@@ -10,12 +10,6 @@ import {
   useScrollTrigger,
   Slide,
 } from "@material-ui/core";
-import {
-  AssignmentInd,
-  Home,
-  SchoolRounded,
-  ContactMail,
-} from "@material-ui/icons";
 
 // CSS styles
 const useStyles = makeStyles((theme) => ({
@@ -53,10 +47,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const tabs = [
-  { label: "Home", key: "home", icon: <Home /> },
-  { label: "About", key: "about", icon: <AssignmentInd /> },
-  { label: "Resume", key: "resume", icon: <SchoolRounded /> },
-  { label: "Contact", key: "contact", icon: <ContactMail /> },
+  { label: "Home", key: "home" },
+  { label: "About", key: "about" },
+  { label: "Skills", key: "skills" },
+  { label: "Contact", key: "contact" },
 ];
 
 const HideOnScroll = ({ children }) => {
@@ -70,7 +64,7 @@ const HideOnScroll = ({ children }) => {
 
 const Navbar = () => {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = useState(false);
+  const [activeTab, setActiveTab] = useState("home");
 
   const transparent = activeTab === "home" ? "transparent" : "#222";
   return (

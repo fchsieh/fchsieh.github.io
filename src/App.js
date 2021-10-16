@@ -13,7 +13,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
-import Resume from "./components/Resume";
+import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import ScrollTop from "./components/ScrollTop";
 
@@ -50,7 +50,6 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <div>
         <CssBaseline />
-
         <Navbar />
         <Element id="home">
           <Home />
@@ -58,14 +57,18 @@ const App = () => {
         <Element id="about">
           <About />
         </Element>
-        <Element id="resume">
-          <Resume />
+        <Element id="skills">
+          <Skills />
         </Element>
         <Element id="contact">
           <Contact />
         </Element>
         <ScrollTop>
-          <Fab color="#4dabda" size="medium" aria-label="scroll back to top">
+          <Fab
+            size="medium"
+            aria-label="scroll back to top"
+            sx={{ backgroundColor: "#eefbfb", color: "#007fcc" }}
+          >
             <KeyboardArrowUp />
           </Fab>
         </ScrollTop>

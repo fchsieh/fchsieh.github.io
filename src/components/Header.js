@@ -5,6 +5,8 @@ import Stack from "@mui/material/Stack";
 import Typed from "react-typed";
 import { Link } from "react-scroll";
 
+import Resume from "./data/resume.pdf";
+
 //CSS Styles
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -103,12 +105,10 @@ const Header = () => {
             Let's Talk?
           </Button>
           <Button
-            component={Link}
             className={classes.button_sub}
             variant="outlined"
-            to="resume"
-            smooth
-            duration={500}
+            href={Resume}
+            target="_blank"
           >
             Resume
           </Button>
