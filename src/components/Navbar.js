@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-scroll";
 import {
@@ -13,6 +13,13 @@ import {
 
 // CSS styles
 const useStyles = makeStyles((theme) => ({
+  navbar: {
+    backgroundColor: "rgba(0, 124, 199, .5)",
+    backdropFilter: "blur(50px)",
+  },
+  navbarTransparent: {
+    backgroundColor: "transparent",
+  },
   tabs: {
     marginLeft: "auto",
     color: "#eefbfb",
@@ -21,29 +28,9 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 100,
     width: 100,
     fontFamily: "Lato",
+    fontSize: "1rem",
     "&:hover": {
       color: "#4DA8DA",
-    },
-  },
-  menuSliderContainer: {
-    background: "#203647",
-    width: 250,
-    height: "100%",
-  },
-  avatar: {
-    display: "block",
-    margin: "0.5rem auto",
-    marginTop: "4vh",
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-  },
-  listItem: {
-    color: "#eefbfb",
-  },
-  list: {
-    "&:hover": {
-      background: "#007cc7",
-      color: "#eefbfb",
     },
   },
 }));
@@ -67,13 +54,30 @@ const HideOnScroll = ({ children }) => {
 
 const Navbar = () => {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = useState("home");
+  const [activeTab, setActiveTab] = useState(false);
+  const [navbar, setNavbar] = useState(classes.navbarTransparent);
 
-  const transparent = activeTab === "home" ? "rgba(255,255,255,0.1)" : "#222";
+  const navRef = useRef();
+  navRef.current = navbar;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 100) {
+        setNavbar(classes.navbar);
+      } else {
+        setNavbar(classes.navbarTransparent);
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <HideOnScroll>
-        <AppBar style={{ background: transparent, top: 0 }}>
+        <AppBar className={navbar}>
           <Toolbar>
             <Typography
               variant="h5"
@@ -94,13 +98,13 @@ const Navbar = () => {
                     value={tab.key}
                     label={tab.label}
                     to={tab.key}
-                    offset={tab.key === "home" ? -600 : 0}
+                    offset={tab.key === "home" ? -400 : 0}
                     className={classes.tab}
                     component={Link}
                     spy
                     isDynamic
                     smooth
-                    duration={600}
+                    duration={700}
                     onSetActive={(e) => {
                       setActiveTab(e);
                     }}

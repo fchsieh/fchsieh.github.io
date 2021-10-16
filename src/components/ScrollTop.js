@@ -1,12 +1,14 @@
 import * as React from "react";
 import { Box, Zoom, useScrollTrigger } from "@mui/material";
+import Fab from "@mui/material/Fab";
+import { KeyboardArrowUp } from "@material-ui/icons";
 
 const ScrollTop = (props) => {
   const { children, window } = props;
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 100,
+    threshold: 200,
   });
 
   const handleClick = (event) => {
@@ -28,7 +30,9 @@ const ScrollTop = (props) => {
         onClick={handleClick}
         sx={{ position: "fixed", bottom: 32, right: 32 }}
       >
-        {children}
+        <Fab size="large" sx={{ backgroundColor: "#eefbfb", color: "#007fcc" }}>
+          <KeyboardArrowUp />
+        </Fab>
       </Box>
     </Zoom>
   );

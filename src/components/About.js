@@ -1,15 +1,14 @@
 import React from "react";
+import Image from "material-ui-image";
 import {
   Avatar,
   Box,
   Container,
   Grid,
-  Hidden,
   Typography,
   Divider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import image from "../images/aboutme.jpg";
 import {
   Dashboard,
   FiveG,
@@ -17,6 +16,7 @@ import {
   DnsOutlined,
 } from "@mui/icons-material";
 
+import AboutMe from "../images/about.jpg";
 import "./About.css";
 
 // CSS styles
@@ -25,16 +25,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgba(0, 124, 199, 0.35)",
     backdropFilter: "blur(55px)",
     padding: theme.spacing(15, 0, 15, 0),
-    margin: "auto",
-    flexDirection: "column",
-    alignItems: "center",
     justifyContent: "center",
-    display: "flex",
-  },
-  responsiveImg: {
-    height: "auto",
-    width: "100%",
-    borderRadius: "22px",
+    alignItems: "center",
   },
   AvatarCont: {
     display: "flex",
@@ -66,10 +58,9 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionHeadCont: {
     paddingBottom: theme.spacing(10),
-    paddingLeft: theme.spacing(10),
     color: "#eefbfb",
-    justifyContent: "center",
     alignItems: "center",
+    textAlign: "left",
   },
   sectionHeading: {
     color: "#eefbfb",
@@ -80,6 +71,8 @@ const useStyles = makeStyles((theme) => ({
   sectionDesc: {
     fontFamily: "Lato",
     fontSize: "1.3rem",
+    flex: "1 1 auto",
+    padding: "1.25rem",
   },
   myUnderline: {
     color: "#4da8da",
@@ -136,63 +129,69 @@ const About = () => {
     <>
       <Box className={classes.section}>
         <Container>
-          <Grid container spacing={5}>
-            <Grid item sm={5}>
-              <Box component={Hidden} xsDown>
-                <img
-                  src={image}
-                  alt=" about us"
-                  className={classes.responsiveImg}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={7}>
-              <Box className={classes.sectionHeadCont}>
-                <Typography
-                  variant="h2"
-                  align="left"
-                  className={classes.sectionHeading}
-                >
-                  Hello! I am Fucheng Hsieh.{" "}
-                  <span className={classes.waving}>👋</span>
-                </Typography>
-                <Divider className={classes.divider} />
-                <Typography
-                  variant="caption"
-                  align="left"
-                  className={classes.sectionDesc}
-                >
-                  I am a{"  "}
-                  <span className={classes.myUnderline}>Computer Science</span>
-                  {"  "}
-                  Grad Student at UC Irvine.
-                </Typography>
-                <br />
-                <br />
-                <Typography
-                  variant="caption"
-                  align="left"
-                  className={classes.sectionDesc}
-                >
-                  I enjoy{"  "}
-                  <span className={classes.myUnderline}>
-                    Developing Websites
-                  </span>
-                  {"  "}, building{"  "}
-                  <span className={classes.myUnderline}>
-                    Network Applications
-                  </span>
-                  {"  "}, and making{"  "}
-                  <span className={classes.myUnderline}>Deep Learning</span>
-                  {"  "}
-                  projects. Also, I am interested in{"  "}
-                  <span className={classes.myUnderline}>Cloud Computing</span>
-                  {"  "}.
-                </Typography>
-              </Box>
+          <Grid
+            container
+            spacing={5}
+            style={{ alignItems: "center", justifyContent: "center" }}
+          >
+            <Grid item xs={12} sm={10}>
+              <Grid container spacing={5}>
+                <Grid item xs={6} sm={4}>
+                  <Box>
+                    <Image src={AboutMe} />
+                  </Box>
+                </Grid>
+                <Grid item xs={6} sm={8}>
+                  <Box className={classes.sectionHeadCont}>
+                    <Typography
+                      variant="h2"
+                      align="left"
+                      className={classes.sectionHeading}
+                    >
+                      Hello! I am Fucheng Hsieh.{" "}
+                      <span className={classes.waving}>👋</span>
+                    </Typography>
+                    <Divider className={classes.divider} />
+                    <Typography
+                      variant="caption"
+                      align="left"
+                      className={classes.sectionDesc}
+                    >
+                      I am a{"  "}
+                      <span className={classes.myUnderline}>
+                        Computer Science
+                      </span>
+                      {"  "}
+                      Grad Student at UC Irvine.
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      align="left"
+                      className={classes.sectionDesc}
+                    >
+                      I enjoy{"  "}
+                      <span className={classes.myUnderline}>
+                        Developing Websites
+                      </span>
+                      {"  "}, building{"  "}
+                      <span className={classes.myUnderline}>
+                        Network Applications
+                      </span>
+                      {"  "}, and making{"  "}
+                      <span className={classes.myUnderline}>Deep Learning</span>
+                      {"  "}
+                      projects. Also, I am interested in{"  "}
+                      <span className={classes.myUnderline}>
+                        Cloud Computing
+                      </span>
+                      {"  "}.
+                    </Typography>
+                  </Box>
+                </Grid>
+              </Grid>
               <Grid container>
                 {aboutData.map((item, i) => (
-                  <Grid item xs={12} sm={6} key={i}>
+                  <Grid item xs={12} sm={6} key={i} style={{ padding: "10px" }}>
                     <Grid container style={{ marginTop: "16px" }}>
                       <Grid item xs={3} className={classes.AvatarCont}>
                         <Avatar className={classes.Avatar}>{item.icon}</Avatar>

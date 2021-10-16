@@ -5,10 +5,6 @@ import {
   MuiThemeProvider,
   unstable_createMuiStrictModeTheme as createTheme,
 } from "@material-ui/core/styles";
-import Fab from "@mui/material/Fab";
-import { KeyboardArrowUp } from "@material-ui/icons";
-
-import "./App.css";
 
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -17,6 +13,7 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import ScrollTop from "./components/ScrollTop";
+import "./App.css";
 
 const theme = createTheme({
   typography: {
@@ -57,24 +54,16 @@ const App = () => {
         <Element id="about">
           <About />
         </Element>
-        <Element id="skills">
-          <Skills />
-        </Element>
         <Element id="projects">
           <Projects />
+        </Element>
+        <Element id="skills">
+          <Skills />
         </Element>
         <Element id="contact">
           <Contact />
         </Element>
-        <ScrollTop>
-          <Fab
-            size="medium"
-            aria-label="scroll back to top"
-            sx={{ backgroundColor: "#eefbfb", color: "#007fcc" }}
-          >
-            <KeyboardArrowUp />
-          </Fab>
-        </ScrollTop>
+        <ScrollTop />
       </MuiThemeProvider>
     </>
   );

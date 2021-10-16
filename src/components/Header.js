@@ -1,11 +1,11 @@
 import React from "react";
+import Typed from "react-typed";
+import { Link } from "react-scroll";
+import Particles from "react-particles-js";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Avatar, Grid, Box, Button } from "@material-ui/core";
 import Stack from "@mui/material/Stack";
-import Typed from "react-typed";
-import { Link } from "react-scroll";
 
-import Particles from "react-particles-js";
 import particleParams from "./Particles.data";
 import Resume from "./data/resume.pdf";
 
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    height: "90vh",
+    height: "80vh",
   },
 }));
 
@@ -69,11 +69,11 @@ const Header = () => {
 
   return (
     <>
-      <Particles
-        canvasClassName={classes.particlesCanvas}
-        params={particleParams}
-      />
       <Box className={classes.homeContainer}>
+        <Particles
+          canvasClassName={classes.particlesCanvas}
+          params={particleParams}
+        />
         <Grid container justifyContent="center">
           <Avatar className={classes.avatar} src="" alt="Fred Hsieh" />
         </Grid>
@@ -83,12 +83,12 @@ const Header = () => {
         <Typography className={classes.subTitle} variant="h5">
           <Typed
             strings={[
-              "CS grad @ UC Irvine",
+              "CS Grad Student @ UC Irvine",
               "Full-stack developer",
-              "MERN Stack developer",
               "Software Engineer",
+              "Wireless Network Engineer",
             ]}
-            typeSpeed={65}
+            typeSpeed={80}
             backSpeed={30}
             backDelay={1500}
             cursorChar="_"
@@ -100,7 +100,7 @@ const Header = () => {
         <Stack
           justifyContent="center"
           textAlign="center"
-          spacing={2}
+          spacing={5}
           direction="row"
           paddingTop="2rem"
         >
