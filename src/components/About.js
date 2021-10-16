@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: "rgba(0, 124, 199, 0.85)",
     padding: theme.spacing(10, 0, 8, 0),
+    height: "100vh",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
   },
   responsiveImg: {
     height: "auto",
@@ -77,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "2px solid #eefbfb",
   },
   divider: {
-    width: "72px",
+    width: "64px",
     height: "4px",
     backgroundColor: "#eefbfb",
     margin: "20px 0",
@@ -112,7 +116,7 @@ const About = () => {
   const classes = useStyles();
   return (
     <>
-      <Box className={classes.section} id="About">
+      <Box className={classes.section}>
         <Container>
           <Grid container spacing={5}>
             <Grid item sm={5}>

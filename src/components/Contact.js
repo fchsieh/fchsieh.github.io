@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "30px",
   },
   box: {
-    padding: theme.spacing(10, 0, 8, 0),
+    padding: theme.spacing(10, 0, 20, 0),
     fontFamily: "Lato",
     fontWeight: "bold",
     margin: "auto",
@@ -32,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     height: "100vh",
-    paddingBottom: "10rem",
   },
   cardTitle: {
     color: "#4da8da",

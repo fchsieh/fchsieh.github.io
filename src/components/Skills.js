@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: "rgba(255, 255, 255, .2)",
     padding: theme.spacing(10, 0, 8, 0),
+    alignContent: "center",
+    alignItems: "center",
+    height: "100vh",
   },
   imageContainer: {
     position: "relative",
@@ -22,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
   responsiveImg: {
     width: "100%",
-    height: "auto",
+    height: "100%",
+    display: "flex",
   },
   imageOverlay: {
     position: "absolute",
@@ -54,6 +58,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "0.5rem",
     },
   },
+  sectionHeading: {
+    color: "#4da8da",
+    fontFamily: "Lato",
+    fontWeight: "bold",
+    margin: "auto",
+    textAlign: "center",
+    paddingBottom: "120px",
+  },
 }));
 
 const portfolioData = [
@@ -70,41 +82,43 @@ const Skills = () => {
   return (
     <>
       <Box className={classes.section}>
-        <Grid
-          container
-          style={{
-            displa: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-          }}
-        >
-          <Grid item xs={12} sm={8}>
-            {}
+        <Container>
+          <Grid container>
+            <Grid item xs={12}>
+              <Box>
+                <Typography variant="h3" className={classes.sectionHeading}>
+                  {"My Skills & Projects"}
+                </Typography>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-        <Container maxWidth="lg">
-          <Grid container spacing={2}>
-            {portfolioData.map((item, i) => (
-              <Grid item xs={6} sm={6} lg={4} key={i}>
-                <Box className={classes.imageContainer}>
-                  <img
-                    src={item.url}
-                    alt={item.title}
-                    className={classes.responsiveImg}
-                  />
-                  <Box className={classes.imageOverlay}>
-                    <Typography className={classes.overlayTitle}>
-                      {item.title}
-                    </Typography>
+          <Container maxWidth="lg">
+            <Grid container spacing={2}>
+              {portfolioData.map((item, i) => (
+                <Grid item xs={6} sm={6} lg={4} key={i}>
+                  <Box className={classes.imageContainer}>
+                    <img
+                      src={item.url}
+                      alt={item.title}
+                      className={classes.responsiveImg}
+                    />
+                    <Box className={classes.imageOverlay}>
+                      <Typography className={classes.overlayTitle}>
+                        {item.title}
+                      </Typography>
 
-                    <Button variant="contained" className={classes.overlayText}>
-                      Visit
-                    </Button>
+                      <Button
+                        variant="contained"
+                        className={classes.overlayText}
+                      >
+                        Visit
+                      </Button>
+                    </Box>
                   </Box>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
         </Container>
       </Box>
     </>
