@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Typography, Box } from "@material-ui/core";
+import { Typography, Box, IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   LocalPhoneRounded,
@@ -27,11 +27,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Lato",
     fontWeight: "bold",
     margin: "auto",
-    display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: "100vh",
+    textAlign: "center",
+    display: "flex",
   },
   cardTitle: {
     color: "#4da8da",
@@ -50,6 +50,20 @@ const useStyles = makeStyles((theme) => ({
     flex: "0 0 40px",
     marginRight: "2rem",
     color: "#007cc7",
+  },
+  socialIcon: {
+    background: "rgba(255, 255, 255, .1)",
+    transition: "all .3s ease-in-out",
+    color: "#007cc7",
+    flex: "0 1 45px",
+    display: "flex",
+    height: "56px",
+    width: "56px",
+    alignItems: "center",
+    marginRight: "2rem",
+    "&:hover": {
+      background: "rgba(255, 255, 255, .7)",
+    },
   },
 }));
 
@@ -114,30 +128,27 @@ const Contact = () => {
               Irvine, CA 92612
             </Box>
             <Box className="social-media">
-              <a
-                className="icon-circle"
+              <IconButton
+                className={classes.socialIcon}
                 href="https://www.linkedin.com/in/freddiehsieh/"
                 target="_blank"
-                rel="noreferrer"
               >
-                <LinkedIn />
-              </a>
-              <a
-                className="icon-circle"
+                <LinkedIn fontSize="large" />
+              </IconButton>
+              <IconButton
+                className={classes.socialIcon}
                 href="https://github.com/fchsieh"
                 target="_blank"
-                rel="noreferrer"
               >
-                <GitHub />
-              </a>
-              <a
-                className="icon-circle"
+                <GitHub fontSize="large" />
+              </IconButton>
+              <IconButton
+                className={classes.socialIcon}
                 href="https://www.facebook.com/fuchening"
                 target="_blank"
-                rel="noreferrer"
               >
-                <Facebook />
-              </a>
+                <Facebook fontSize="large" />
+              </IconButton>
             </Box>
           </Box>
           <form onSubmit={submitForm}>

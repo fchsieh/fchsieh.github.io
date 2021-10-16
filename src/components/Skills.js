@@ -13,9 +13,12 @@ const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: "rgba(255, 255, 255, .2)",
     padding: theme.spacing(10, 0, 8, 0),
-    alignContent: "center",
+    margin: "auto",
+    flexDirection: "column",
     alignItems: "center",
-    height: "100vh",
+    justifyContent: "center",
+    textAlign: "center",
+    display: "flex",
   },
   imageContainer: {
     position: "relative",

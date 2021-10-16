@@ -22,9 +22,11 @@ const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: "rgba(0, 124, 199, 0.85)",
     padding: theme.spacing(10, 0, 8, 0),
-    height: "100vh",
-    justifyContent: "center",
+    margin: "auto",
+    flexDirection: "column",
     alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
     display: "flex",
   },
   responsiveImg: {

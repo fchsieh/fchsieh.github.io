@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     textAlign: "center",
   },
-  button_sub: {
+  subButton: {
     background: theme.palette.button.main,
     color: "white",
     fontFamily: "Lato",
@@ -53,14 +53,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     textAlign: "center",
   },
-  typedContainer: {
+  homeContainer: {
     margin: "auto",
     marginTop: "10%",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    height: "80vh",
+    height: "90vh",
   },
 }));
 
@@ -73,7 +73,7 @@ const Header = () => {
         canvasClassName={classes.particlesCanvas}
         params={particleParams}
       />
-      <Box className={classes.typedContainer}>
+      <Box className={classes.homeContainer}>
         <Grid container justifyContent="center">
           <Avatar className={classes.avatar} src="" alt="Fred Hsieh" />
         </Grid>
@@ -115,7 +115,7 @@ const Header = () => {
             Let's Talk?
           </Button>
           <Button
-            className={classes.button_sub}
+            className={classes.subButton}
             variant="outlined"
             href={Resume}
             target="_blank"
