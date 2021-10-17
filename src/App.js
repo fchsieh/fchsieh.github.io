@@ -6,12 +6,9 @@ import {
   unstable_createMuiStrictModeTheme as createTheme,
 } from "@material-ui/core/styles";
 
+import loadable from "@loadable/component";
+
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
 import ScrollTop from "./components/ScrollTop";
 import "./App.css";
 
@@ -43,6 +40,11 @@ const theme = createTheme({
 });
 
 const App = () => {
+  const Header = loadable(() => import("./components/Header"));
+  const About = loadable(() => import("./components/About"));
+  const Projects = loadable(() => import("./components/Projects"));
+  const Skills = loadable(() => import("./components/Skills"));
+  const Contact = loadable(() => import("./components/Contact"));
   return (
     <>
       <MuiThemeProvider theme={theme}>

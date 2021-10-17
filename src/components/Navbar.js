@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     minWidth: 100,
-    width: 100,
     fontFamily: "Lato",
     fontSize: "1rem",
     "&:hover": {
@@ -98,7 +97,7 @@ const Navbar = () => {
                     value={tab.key}
                     label={tab.label}
                     to={tab.key}
-                    offset={tab.key === "home" ? -400 : 0}
+                    offset={tab.key === "home" ? -300 : 0}
                     className={classes.tab}
                     component={Link}
                     spy

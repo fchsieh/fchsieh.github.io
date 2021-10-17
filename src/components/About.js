@@ -22,7 +22,7 @@ import "./About.css";
 // CSS styles
 const useStyles = makeStyles((theme) => ({
   section: {
-    backgroundColor: "rgba(0, 124, 199, 0.35)",
+    backgroundColor: "rgba(0, 124, 199, 0.25)",
     backdropFilter: "blur(55px)",
     padding: theme.spacing(15, 0, 15, 0),
     justifyContent: "center",
@@ -61,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#eefbfb",
     alignItems: "center",
     textAlign: "left",
+  },
+  emphasize: {
+    color: "rgba(99,188,222)",
   },
   sectionHeading: {
     color: "#eefbfb",
@@ -104,9 +107,9 @@ const aboutData = [
     icon: <Dashboard fontSize="large" />,
   },
   {
-    title: "Network & IoT",
+    title: "Wireless Network & IoT",
     description:
-      "One-year work experience in developing 4G/5G MEC and IoT applications. Professional in setting OpenWRT",
+      "One-year work experience in developing 4G/5G MEC and IoT applications. Familiar with configuring OpenWRT to support Mesh Wi-Fi systems",
     icon: <FiveG fontSize="large" />,
   },
   {
@@ -116,9 +119,9 @@ const aboutData = [
     icon: <SmartToyOutlined fontSize="large" />,
   },
   {
-    title: "System Admin",
+    title: "System Admin & Cloud",
     description:
-      "Experienced in using Linux services, including Apache and Nginx. Built a Class Schedule Maker using Bash commands",
+      "Experienced in using Linux services, including Apache and Nginx, and virtualization tools like Docker. Built a Class Schedule Maker using Bash commands",
     icon: <DnsOutlined fontSize="large" />,
   },
 ];
@@ -148,7 +151,9 @@ const About = () => {
                       align="left"
                       className={classes.sectionHeading}
                     >
-                      Hello! I am Fucheng Hsieh.{" "}
+                      Hello! I am{" "}
+                      <span className={classes.emphasize}>Fucheng Hsieh</span>.
+                      {"  "}
                       <span className={classes.waving}>👋</span>
                     </Typography>
                     <Divider className={classes.divider} />
