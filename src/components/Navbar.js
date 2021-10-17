@@ -53,7 +53,7 @@ const HideOnScroll = ({ children }) => {
 
 const Navbar = () => {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = useState(false);
+  const [activeTab, setActiveTab] = useState("home");
   const [navbar, setNavbar] = useState(classes.navbarTransparent);
 
   const navRef = useRef();

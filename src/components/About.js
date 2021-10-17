@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "material-ui-image";
 import {
   Avatar,
   Box,
@@ -7,6 +6,10 @@ import {
   Grid,
   Typography,
   Divider,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -14,9 +17,13 @@ import {
   FiveG,
   SmartToyOutlined,
   DnsOutlined,
+  MonetizationOn,
+  ShowChart,
+  Reddit,
+  Coffee,
 } from "@mui/icons-material";
 
-import AboutMe from "../images/about.jpg";
+import AboutMe from "../images/about.png";
 import "./About.css";
 
 // CSS styles
@@ -57,25 +64,22 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "10px",
   },
   sectionHeadCont: {
-    paddingBottom: theme.spacing(10),
+    paddingBottom: theme.spacing(1),
     color: "#eefbfb",
-    alignItems: "center",
-    textAlign: "left",
   },
   emphasize: {
     color: "rgba(99,188,222)",
   },
   sectionHeading: {
     color: "#eefbfb",
-    margin: theme.spacing(1, 0),
+    padding: theme.spacing(1, 0, 1, 1),
     fontWeight: 700,
     fontSize: "2.5rem",
   },
   sectionDesc: {
     fontFamily: "Lato",
     fontSize: "1.3rem",
-    flex: "1 1 auto",
-    padding: "1.25rem",
+    textAlign: "left",
   },
   myUnderline: {
     color: "#4da8da",
@@ -88,7 +92,8 @@ const useStyles = makeStyles((theme) => ({
     width: "64px",
     height: "4px",
     backgroundColor: "#eefbfb",
-    margin: "15px 0",
+    margin: "10px 0",
+    marginLeft: "8px",
   },
   waving: {
     animationName: "wave-animation",
@@ -97,7 +102,38 @@ const useStyles = makeStyles((theme) => ({
     transformOrigin: "70% 70%",
     display: "inline-block",
   },
+  imgBox: { height: "100%", width: "100%" },
+  listIcon: {
+    color: "#4da8da",
+  },
+  listText: {
+    fontFamily: "Lato",
+    fontSize: "1.1rem",
+  },
 }));
+
+const interestList = [
+  {
+    label: "bitcoin",
+    desc: "Trading Digicurrency",
+    icon: <MonetizationOn fontSize="large" />,
+  },
+  {
+    label: "stock",
+    desc: "Trading stocks",
+    icon: <ShowChart fontSize="large" />,
+  },
+  {
+    label: "meme",
+    desc: "Watch memes",
+    icon: <Reddit fontSize="large" />,
+  },
+  {
+    label: "coffee",
+    desc: "And drink coffee!",
+    icon: <Coffee fontSize="large" />,
+  },
+];
 
 const aboutData = [
   {
@@ -134,74 +170,118 @@ const About = () => {
         <Container>
           <Grid
             container
-            spacing={5}
-            style={{ alignItems: "center", justifyContent: "center" }}
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              direction: "row",
+            }}
           >
-            <Grid item xs={12} sm={10}>
-              <Grid container spacing={5}>
-                <Grid item xs={6} sm={4}>
-                  <Box>
-                    <Image src={AboutMe} />
+            <Grid container>
+              <Grid
+                container
+                spacing={2}
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Grid item xs={1} sm={1}></Grid>
+                <Grid item xs={12} sm={4}>
+                  <Box className={classes.imgBox}>
+                    <img
+                      src={AboutMe}
+                      className="img-responsive"
+                      width="100%"
+                    />
                   </Box>
                 </Grid>
-                <Grid item xs={6} sm={8}>
-                  <Box className={classes.sectionHeadCont}>
-                    <Typography
-                      variant="h2"
-                      align="left"
-                      className={classes.sectionHeading}
-                    >
-                      Hello! I am{" "}
-                      <span className={classes.emphasize}>Fucheng Hsieh</span>.
-                      {"  "}
-                      <span className={classes.waving}>👋</span>
-                    </Typography>
-                    <Divider className={classes.divider} />
-                    <Typography
-                      variant="caption"
-                      align="left"
-                      className={classes.sectionDesc}
-                    >
-                      I am a{"  "}
-                      <span className={classes.myUnderline}>
-                        Computer Science
-                      </span>
-                      {"  "}
-                      Grad Student at UC Irvine.
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      align="left"
-                      className={classes.sectionDesc}
-                    >
-                      I enjoy{"  "}
-                      <span className={classes.myUnderline}>
-                        Developing Websites
-                      </span>
-                      {"  "}, building{"  "}
-                      <span className={classes.myUnderline}>
-                        Network Applications
-                      </span>
-                      {"  "}, and making{"  "}
-                      <span className={classes.myUnderline}>Deep Learning</span>
-                      {"  "}
-                      projects. Also, I am interested in{"  "}
-                      <span className={classes.myUnderline}>
-                        Cloud Computing
-                      </span>
-                      {"  "}.
-                    </Typography>
-                  </Box>
+                <Grid item xs={12} sm={7} style={{ paddingLeft: "20px" }}>
+                  <Grid container>
+                    <Grid item xs={12} className={classes.sectionHeadCont}>
+                      <Typography
+                        variant="h2"
+                        align="left"
+                        className={classes.sectionHeading}
+                      >
+                        Hello! I am{" "}
+                        <span className={classes.emphasize}>Fucheng Hsieh</span>
+                        .{"  "}
+                        <span className={classes.waving}>👋</span>
+                      </Typography>
+                      <Divider className={classes.divider} />
+                    </Grid>
+                    <Grid item xs={10} className={classes.sectionHeadCont}>
+                      <Typography
+                        variant="body1"
+                        align="center"
+                        className={classes.sectionDesc}
+                      >
+                        I am a{"  "}
+                        <span className={classes.myUnderline}>
+                          Computer Science
+                        </span>
+                        {"  "}
+                        Grad Student at UC Irvine.
+                      </Typography>
+                      <Typography
+                        variant="body1"
+                        align="left"
+                        className={classes.sectionDesc}
+                      >
+                        I enjoy{"  "}
+                        <span className={classes.myUnderline}>
+                          Developing Websites
+                        </span>
+                        {"  "}, building{"  "}
+                        <span className={classes.myUnderline}>
+                          Network Applications
+                        </span>
+                        {"  "}, and making{"  "}
+                        <span className={classes.myUnderline}>
+                          Deep Learning
+                        </span>
+                        {"  "}
+                        projects. Also, I am interested in{"  "}
+                        <span className={classes.myUnderline}>
+                          Cloud Computing
+                        </span>
+                        .
+                      </Typography>
+                      <br />
+                      <Typography
+                        variant="body2"
+                        align="left"
+                        className={classes.sectionDesc}
+                      >
+                        Apart from coding, I also enjoy:
+                      </Typography>
+                      <List>
+                        {interestList.map((listItem, i) => (
+                          <ListItem key={i}>
+                            <ListItemIcon className={classes.listIcon}>
+                              {listItem.icon}
+                            </ListItemIcon>
+                            <ListItemText
+                              classes={{ primary: classes.listText }}
+                              primary={listItem.desc}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Grid>
+                  </Grid>
                 </Grid>
               </Grid>
-              <Grid container>
+              <Grid
+                container
+                style={{ paddingTop: "10px" }}
+                justifyContent="center"
+              >
                 {aboutData.map((item, i) => (
-                  <Grid item xs={12} sm={6} key={i} style={{ padding: "10px" }}>
-                    <Grid container style={{ marginTop: "16px" }}>
+                  <Grid item xs={12} sm={5} key={i} style={{ padding: "10px" }}>
+                    <Grid container style={{ marginTop: "20px" }}>
                       <Grid item xs={3} className={classes.AvatarCont}>
                         <Avatar className={classes.Avatar}>{item.icon}</Avatar>
                       </Grid>
-                      <Grid item xs={9}>
+                      <Grid item xs={8}>
                         <Typography variant="h6" className={classes.CardTitle}>
                           {item.title}
                         </Typography>

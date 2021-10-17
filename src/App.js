@@ -13,6 +13,12 @@ import ScrollTop from "./components/ScrollTop";
 import "./App.css";
 
 const theme = createTheme({
+  props: {
+    MuiList: {
+      dense: true,
+      fontFamily: "Lato",
+    },
+  },
   typography: {
     fontFamily: ["Merriweather", "Lato"].join(","),
     fontSize: 14,
