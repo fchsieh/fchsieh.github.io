@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontFamily: "Lato",
     fontWeight: 400,
-    fontSize: "1rem",
+    fontSize: "1.1rem",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fontFamily: "Lato",
     fontWeight: 400,
-    fontSize: "1rem",
+    fontSize: "1.1em",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -83,14 +83,14 @@ const Header = () => {
         <Typography className={classes.subTitle} variant="h5">
           <Typed
             strings={[
-              "CS Grad Student @ UC Irvine",
+              "CS Grad student @ UCI",
               "Full-stack developer",
               "Software Engineer",
-              "Wireless Network Engineer",
+              "System Engineer",
             ]}
-            typeSpeed={80}
+            typeSpeed={50}
             backSpeed={30}
-            backDelay={1500}
+            backDelay={1800}
             cursorChar="_"
             smartBackspace
             loop
@@ -100,7 +100,7 @@ const Header = () => {
         <Stack
           justifyContent="center"
           textAlign="center"
-          spacing={5}
+          spacing={3}
           direction="row"
           paddingTop="2rem"
         >

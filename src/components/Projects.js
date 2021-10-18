@@ -12,7 +12,7 @@ import image6 from "../images/5-9.jpg";
 const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: "rgba(255, 255, 255, .2)",
-    backdropFilter: "blur(15px)",
+    backdropFilter: "blur(35px)",
     padding: theme.spacing(15, 0, 15, 0),
     margin: "auto",
     flexDirection: "column",
@@ -64,12 +64,11 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionHeading: {
     color: "#4da8da",
-    fontFamily: "Lato",
-    fontWeight: "bold",
     margin: "auto",
     textAlign: "center",
     paddingBottom: "120px",
   },
+  emphasize: { color: "#eefbfb" },
 }));
 
 const portfolioData = [
@@ -91,7 +90,7 @@ const Projects = () => {
             <Grid item xs={12}>
               <Box>
                 <Typography variant="h3" className={classes.sectionHeading}>
-                  {"Projects"}
+                  Recent <span className={classes.emphasize}>Projects</span>
                 </Typography>
               </Box>
             </Grid>

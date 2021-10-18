@@ -22,6 +22,7 @@ import {
   Reddit,
   Coffee,
 } from "@mui/icons-material";
+import Image from "material-ui-image";
 
 import AboutMe from "../images/about.png";
 import "./About.css";
@@ -49,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   CardTitle: {
     fontFamily: "Lato",
+    fontWeight: "bold",
     fontSize: "1.7rem",
     color: "#007cc7",
     backgroundColor: "#eefbfb",
@@ -73,8 +75,8 @@ const useStyles = makeStyles((theme) => ({
   sectionHeading: {
     color: "#eefbfb",
     padding: theme.spacing(1, 0, 1, 1),
-    fontWeight: 700,
-    fontSize: "2.5rem",
+    fontWeight: "bold",
+    fontSize: "2.8rem",
   },
   sectionDesc: {
     fontFamily: "Lato",
@@ -82,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
   },
   myUnderline: {
-    color: "#4da8da",
+    color: "rgba(99,188,222)",
     fontSize: "1.3rem",
     fontWeight: 700,
     paddingBottom: "1.5px",
@@ -139,7 +141,7 @@ const aboutData = [
   {
     title: "Web Development",
     description:
-      "Experienced in JavaScript, React, Node, and HTML/CSS. This website is built with React and Material UI!",
+      "Experienced in JavaScript, React, Node, and HTML/CSS. This website was built with React and Material UI!",
     icon: <Dashboard fontSize="large" />,
   },
   {
@@ -157,7 +159,7 @@ const aboutData = [
   {
     title: "System Admin & Cloud",
     description:
-      "Experienced in using Linux services, including Apache and Nginx, and virtualization tools like Docker. Built a Class Schedule Maker using Bash commands",
+      "Experienced in using and configuring Linux server, including Apache, Nginx, and Docker containers. Built a Class Schedule Maker using Bash commands",
     icon: <DnsOutlined fontSize="large" />,
   },
 ];
@@ -186,10 +188,10 @@ const About = () => {
                 <Grid item xs={1} sm={1}></Grid>
                 <Grid item xs={12} sm={4}>
                   <Box className={classes.imgBox}>
-                    <img
+                    <Image
                       src={AboutMe}
-                      className="img-responsive"
                       width="100%"
+                      style={{ backgroundColor: "transparent" }}
                     />
                   </Box>
                 </Grid>

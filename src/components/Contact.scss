@@ -78,7 +78,7 @@ p.sub-title {
 
             label {
                 font-size: 1.2rem;
-                color: rgba(255, 255, 255, .8);
+                color: rgba(255, 255, 255, 1);
                 margin-bottom: 1rem;
             }
 
@@ -114,19 +114,6 @@ p.sub-title {
 
             &.right {
                 align-items: flex-end !important;
-            }
-
-            button {
-                width: 200px;
-                height: 60px;
-                cursor: pointer;
-                background: #4da8da;
-                color: #eefbfb;
-                border: none;
-                text-transform: uppercase;
-                border-radius: 10px;
-                font-size: 1.2rem;
-                font-weight: 400;
             }
         }
     }

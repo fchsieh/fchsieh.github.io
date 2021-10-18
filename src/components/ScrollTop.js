@@ -1,37 +1,35 @@
-import * as React from "react";
-import { Box, Zoom, useScrollTrigger } from "@mui/material";
-import Fab from "@mui/material/Fab";
-import { KeyboardArrowUp } from "@material-ui/icons";
+import React from "react";
+import { Box, Fab, Zoom, useScrollTrigger } from "@mui/material";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
-const ScrollTop = (props) => {
-  const { children, window } = props;
+const ScrollTop = () => {
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
     disableHysteresis: true,
-    threshold: 200,
+    threshold: 100,
   });
 
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      "#back-to-top-anchor"
-    );
-
-    if (anchor) {
-      anchor.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }
+  const handleClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
     <Zoom in={trigger}>
       <Box
         onClick={handleClick}
-        sx={{ position: "fixed", bottom: 32, right: 32 }}
+        role="presentation"
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
       >
-        <Fab size="large" sx={{ backgroundColor: "#eefbfb", color: "#007fcc" }}>
-          <KeyboardArrowUp />
+        <Fab
+          size="large"
+          style={{
+            color: "#007cc7",
+            backgroundColor: "#fff",
+          }}
+        >
+          <KeyboardArrowUpIcon fontSize="large" />
         </Fab>
       </Box>
     </Zoom>

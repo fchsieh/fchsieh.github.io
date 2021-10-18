@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Typography, Box, IconButton } from "@material-ui/core";
+import { Typography, Box, IconButton, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   LocalPhoneRounded,
@@ -15,16 +15,12 @@ import "./Contact.scss";
 const useStyles = makeStyles((theme) => ({
   title: {
     color: "#4da8da",
-    fontFamily: "Lato",
-    fontWeight: "bold",
     margin: "auto",
     textAlign: "center",
     paddingBottom: "30px",
   },
   box: {
     padding: theme.spacing(15, 0, 15, 0),
-    fontFamily: "Lato",
-    fontWeight: "bold",
     margin: "auto",
     flexDirection: "column",
     alignItems: "center",
@@ -34,8 +30,6 @@ const useStyles = makeStyles((theme) => ({
   },
   cardTitle: {
     color: "#4da8da",
-    fontFamily: "Lato",
-    fontWeight: 700,
     justifyContent: "center",
     display: "flex",
     padding: theme.spacing(4, 4, 0, 4),
@@ -47,17 +41,17 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2rem",
     marginLeft: "2rem",
     fontSize: "1.3rem",
-    fontWeight: 400,
+    fontFamily: "Lato",
   },
   icon: {
     flex: "0 0 40px",
     marginRight: "1.5rem",
-    color: "#007cc7",
+    color: "#4da8da",
   },
   socialIcon: {
-    background: "rgba(255, 255, 255, .1)",
+    background: "rgba(255, 255, 255, .2)",
     transition: "all .3s ease-in-out",
-    color: "#007cc7",
+    color: "#4da8da",
     flex: "0 1 45px",
     display: "flex",
     height: "56px",
@@ -74,6 +68,22 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     width: "50%",
     marginLeft: "1rem",
+  },
+  buttonBox: {
+    padding: 0,
+    alignItems: "flex-end !important",
+    display: "flex",
+  },
+  button: {
+    width: "200px",
+    height: "60px",
+    cursor: "pointer",
+    background: "#007cc7",
+    color: "#eefbfb",
+    border: "none",
+    textTransform: "uppercase",
+    borderRadius: "10px",
+    fontSize: "1.2rem",
   },
 }));
 
@@ -115,7 +125,7 @@ const Contact = () => {
     <>
       <Box className={classes.box}>
         <Typography variant="h3" className={classes.title}>
-          Talk To Me
+          Talk <span style={{ color: "#eefbfb" }}>to</span> Me
         </Typography>
         <Box id="contact-container">
           <Box className="contact-info">
@@ -193,11 +203,19 @@ const Contact = () => {
                 ></textarea>
               </Box>
             </Box>
-            <Box className="col">
-              <Box className="form-group solo right">
-                <button className="primary" type="submit">
+            <Box
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                flex: "0 1 100%",
+                paddingRight: "30px",
+                alignItems: "flex-end",
+              }}
+            >
+              <Box className={classes.buttonBox}>
+                <Button className={classes.button} type="submit">
                   Send Message
-                </button>
+                </Button>
               </Box>
             </Box>
           </form>

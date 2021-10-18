@@ -6,9 +6,12 @@ import {
   unstable_createMuiStrictModeTheme as createTheme,
 } from "@material-ui/core/styles";
 
-import loadable from "@loadable/component";
-
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 import ScrollTop from "./components/ScrollTop";
 import "./App.css";
 
@@ -20,10 +23,9 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Merriweather", "Lato"].join(","),
-    fontSize: 14,
-    fontWeightRegular: 400,
-    fontWeightMedium: 700,
+    fontFamily: ["Montserrat", "Lato"].join(","),
+    fontWeightMedium: 400,
+    fontWeightBold: 500,
   },
   palette: {
     primary: {
@@ -46,15 +48,11 @@ const theme = createTheme({
 });
 
 const App = () => {
-  const Header = loadable(() => import("./components/Header"));
-  const About = loadable(() => import("./components/About"));
-  const Projects = loadable(() => import("./components/Projects"));
-  const Skills = loadable(() => import("./components/Skills"));
-  const Contact = loadable(() => import("./components/Contact"));
   return (
     <>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
+        <span id="back-to-top-anchor"></span>
         <Navbar />
         <Element id="home">
           <Header />

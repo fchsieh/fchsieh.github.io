@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     minWidth: 100,
-    fontFamily: "Lato",
     fontSize: "1rem",
     "&:hover": {
       color: "#4DA8DA",
@@ -54,7 +53,7 @@ const HideOnScroll = ({ children }) => {
 const Navbar = () => {
   const classes = useStyles();
   const [activeTab, setActiveTab] = useState("home");
-  const [navbar, setNavbar] = useState(classes.navbarTransparent);
+  const [navbar, setNavbar] = useState("transparent");
 
   const navRef = useRef();
   navRef.current = navbar;
@@ -62,9 +61,9 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY >= 100) {
-        setNavbar(classes.navbar);
+        setNavbar("normal");
       } else {
-        setNavbar(classes.navbarTransparent);
+        setNavbar("transparent");
       }
     };
     document.addEventListener("scroll", handleScroll);
@@ -76,12 +75,15 @@ const Navbar = () => {
   return (
     <>
       <HideOnScroll>
-        <AppBar className={navbar}>
+        <AppBar
+          className={
+            navbar === "transparent"
+              ? classes.navbarTransparent
+              : classes.navbar
+          }
+        >
           <Toolbar>
-            <Typography
-              variant="h5"
-              style={{ color: "#eefbfb", fontFamily: "Lato" }}
-            >
+            <Typography variant="h5" style={{ color: "#eefbfb" }}>
               Fucheng.
             </Typography>
             <Tabs
@@ -114,7 +116,7 @@ const Navbar = () => {
           </Toolbar>
         </AppBar>
       </HideOnScroll>
-      <Toolbar id="back-to-top-anchor" />
+      <Toolbar />
     </>
   );
 };

@@ -1,29 +1,52 @@
 import React from "react";
-import { Card, CardMedia, CardContent, Typography } from "@material-ui/core";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Box,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   cardRoot: {
-    maxWidth: 345,
+    backgroundColor: "transparent",
+    border: "5px solid #eefbfb",
+    height: "220px",
+    width: "150px",
+  },
+  imgBox: {
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
   },
   media: {
-    height: 200,
+    padding: "20px",
+    maxHeight: "120px",
+    width: "auto",
+  },
+  cardText: {
+    fontFamily: "Lato",
+    color: "#eefbfb",
+    fontSize: "1.5rem",
   },
 }));
 
-const SkillCard = (name, image) => {
+const SkillCard = ({ skill, image }) => {
   const classes = useStyles();
   return (
-    <Card className={classes.cardRoot}>
-      <CardMedia
-        component="img"
-        image={image}
-        title={name}
-        className={classes.media}
-      />
+    <Card className={classes.cardRoot} variant="outlined">
+      <Box className={classes.imgBox}>
+        <CardMedia
+          title={skill}
+          component="img"
+          src={image}
+          className={classes.media}
+        />
+      </Box>
       <CardContent>
-        <Typography variant="h5" component="div" gutterBottom>
-          {name}
+        <Typography className={classes.cardText} variant="h6">
+          {skill}
         </Typography>
       </CardContent>
     </Card>
