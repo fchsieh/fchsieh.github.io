@@ -2,12 +2,11 @@ import React from "react";
 import { Box, Grid, Container, Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import image1 from "../images/5-2.jpg";
-import image2 from "../images/5-3.jpg";
-import image3 from "../images/5-4.jpg";
-import image4 from "../images/5-6.jpg";
-import image5 from "../images/5-8.jpg";
-import image6 from "../images/5-9.jpg";
+import nftMarket from "../images/nft.png";
+import nodeBlog from "../images/blog.png";
+import uCCompiler from "../images/compiler.png";
+import nodeBBS from "../images/bbs.png";
+import portfolioImage from "../images/portfolio.png";
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -23,21 +22,21 @@ const useStyles = makeStyles((theme) => ({
   },
   imageContainer: {
     position: "relative",
+    display: "flex",
+    justifyContent: "center",
     "&:hover $imageOverlay": {
       opacity: 1,
     },
   },
   responsiveImg: {
-    width: "100%",
-    height: "100%",
+    width: "auto",
+    maxHeight: "240px",
     display: "flex",
   },
   imageOverlay: {
     position: "absolute",
     width: "100%",
     height: "100%",
-    top: 0,
-    left: 0,
     backgroundColor: "#007cc7",
     color: "#eefbfb",
     display: "flex",
@@ -45,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     opacity: 0,
-    transition: "0.7s",
+    transition: "0.3s",
   },
   overlayTitle: {
     fontSize: "2rem",
@@ -72,12 +71,31 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const portfolioData = [
-  { url: image1, title: "# Portfolio ", link: "" },
-  { url: image2, title: "# Portfolio ", link: "" },
-  { url: image3, title: "# Portfolio ", link: "" },
-  { url: image4, title: "# Portfolio ", link: "" },
-  { url: image5, title: "# Portfolio ", link: "" },
-  { url: image6, title: "# Portfolio ", link: "" },
+  {
+    url: nftMarket,
+    title: "NFT Marketplace",
+    link: "https://github.com/fchsieh/MyNFT-Market",
+  },
+  {
+    url: nodeBlog,
+    title: "Node.JS Blog",
+    link: "https://github.com/fchsieh/nodejs_blog",
+  },
+  {
+    url: uCCompiler,
+    title: "uC Compiler",
+    link: "https://github.com/fchsieh/uC-Compiler",
+  },
+  {
+    url: nodeBBS,
+    title: "Node.JS Bulletin Board System",
+    link: "https://github.com/fchsieh/Node-BBS",
+  },
+  {
+    url: portfolioImage,
+    title: "My Portfolio",
+    link: "https://portfolio.fredhs.dev",
+  },
 ];
 
 const Projects = () => {
@@ -96,11 +114,17 @@ const Projects = () => {
             </Grid>
           </Grid>
           <Container maxWidth="lg">
-            <Grid container spacing={2}>
+            <Grid
+              container
+              spacing={2}
+              style={{ justifyContent: "center", alignItems: "center" }}
+            >
               {portfolioData.map((item, i) => (
                 <Grid item xs={6} sm={6} lg={4} key={i}>
                   <Box className={classes.imageContainer}>
                     <img
+                      width="240px"
+                      height="240px"
                       src={item.url}
                       alt={item.title}
                       className={classes.responsiveImg}
@@ -113,6 +137,9 @@ const Projects = () => {
                       <Button
                         variant="contained"
                         className={classes.overlayText}
+                        href={item.link}
+                        component="a"
+                        target="_blank"
                       >
                         Visit
                       </Button>
