@@ -5,7 +5,7 @@
 ```shell
 npm i
 ```
-2. Development mode
+1. Development mode
 ```shell
 npm start
 ```
