@@ -23,11 +23,12 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: "white",
     fontWeight: 700,
-    padding: "1rem",
+    padding: "2rem",
   },
   subTitle: {
     color: theme.palette.title.main,
     fontFamily: "Lato",
+    padding: "0.5rem",
   },
   button: {
     background: theme.palette.button.light,
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    height: "80vh",
+    height: "90vh",
   },
 }));
 

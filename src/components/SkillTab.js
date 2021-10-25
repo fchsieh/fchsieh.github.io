@@ -7,7 +7,7 @@ const SkillTab = ({ data }) => {
     <>
       <Stack
         direction={{ xs: "column", sm: "row" }}
-        spacing={{ xs: 1, sm: 2, md: 4 }}
+        spacing={{ xs: 2, sm: 2, md: 4 }}
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
         {data.map((item, k) => (

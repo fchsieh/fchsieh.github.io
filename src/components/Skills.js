@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: "rgba(0, 124, 199, 0.4)",
     backdropFilter: "blur(45px)",
-    padding: theme.spacing(15, 0, 15, 0),
+    paddingTop: "8rem",
+    paddingBottom: "8rem",
     margin: "auto",
     flexDirection: "column",
     alignItems: "center",
@@ -42,8 +43,6 @@ const useStyles = makeStyles((theme) => ({
     color: "#4da8da",
   },
   tab: {
-    fontFamily: "Lato",
-    fontSize: "1.3rem",
     color: "#eefbfb",
   },
 }));
@@ -87,10 +86,32 @@ const Skills = () => {
               onChange={(e, value) => {
                 setTab(value);
               }}
+              variant="center"
             >
-              <Tab className={classes.tab} label="Languages" value="1" />
-              <Tab className={classes.tab} label="Libraries" value="2" />
-              <Tab className={classes.tab} label="Tools" value="3" />
+              <Tab
+                className={classes.tab}
+                label="Languages"
+                value="1"
+                style={{
+                  fontSize: "1rem",
+                }}
+              />
+              <Tab
+                className={classes.tab}
+                label="Libraries"
+                value="2"
+                style={{
+                  fontSize: "1rem",
+                }}
+              />
+              <Tab
+                className={classes.tab}
+                label="Tools"
+                value="3"
+                style={{
+                  fontSize: "1rem",
+                }}
+              />
             </TabList>
           </Box>
           <TabPanel value="1">

@@ -11,8 +11,9 @@ import portfolioImage from "../images/portfolio.png";
 const useStyles = makeStyles((theme) => ({
   section: {
     backgroundColor: "rgba(255, 255, 255, .2)",
-    backdropFilter: "blur(35px)",
-    padding: theme.spacing(15, 0, 15, 0),
+    backdropFilter: "blur(45px)",
+    paddingTop: "8rem",
+    paddingBottom: "8rem",
     margin: "auto",
     flexDirection: "column",
     alignItems: "center",
@@ -29,8 +30,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   responsiveImg: {
-    width: "auto",
-    maxHeight: "240px",
+    width: "100%",
+    height: "auto",
     display: "flex",
   },
   imageOverlay: {
@@ -39,17 +40,17 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     backgroundColor: "#007cc7",
     color: "#eefbfb",
-    display: "flex",
-    flexFlow: "column wrap",
-    justifyContent: "center",
-    alignItems: "center",
     opacity: 0,
     transition: "0.3s",
+  },
+  overlayItems: {
+    position: "relative",
+    top: "25%",
+    padding: "1rem",
   },
   overlayTitle: {
     fontSize: "2rem",
     fontFamily: "Lato",
-    marginBottom: "16px",
     [theme.breakpoints.down("xs")]: {
       fontSize: "1.2rem",
     },
@@ -57,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
   overlayText: {
     fontSize: "1rem",
     fontFamily: "Lato",
+    marginTop: "1rem",
     [theme.breakpoints.down("xs")]: {
       fontSize: "0.5rem",
     },
@@ -88,7 +90,7 @@ const portfolioData = [
   },
   {
     url: nodeBBS,
-    title: "Node.JS Bulletin Board System",
+    title: "Node.JS BBS",
     link: "https://github.com/fchsieh/Node-BBS",
   },
   {
@@ -120,29 +122,29 @@ const Projects = () => {
               style={{ justifyContent: "center", alignItems: "center" }}
             >
               {portfolioData.map((item, i) => (
-                <Grid item xs={6} sm={6} lg={4} key={i}>
+                <Grid item xs={12} lg={4} key={i}>
                   <Box className={classes.imageContainer}>
                     <img
-                      width="240px"
-                      height="240px"
                       src={item.url}
                       alt={item.title}
                       className={classes.responsiveImg}
                     />
                     <Box className={classes.imageOverlay}>
-                      <Typography className={classes.overlayTitle}>
-                        {item.title}
-                      </Typography>
+                      <Box className={classes.overlayItems}>
+                        <Typography className={classes.overlayTitle}>
+                          {item.title}
+                        </Typography>
 
-                      <Button
-                        variant="contained"
-                        className={classes.overlayText}
-                        href={item.link}
-                        component="a"
-                        target="_blank"
-                      >
-                        Visit
-                      </Button>
+                        <Button
+                          variant="contained"
+                          className={classes.overlayText}
+                          href={item.link}
+                          component="a"
+                          target="_blank"
+                        >
+                          Visit
+                        </Button>
+                      </Box>
                     </Box>
                   </Box>
                 </Grid>

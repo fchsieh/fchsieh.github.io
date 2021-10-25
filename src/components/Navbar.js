@@ -91,6 +91,7 @@ const Navbar = () => {
               value={activeTab}
               indicatorColor="primary"
               variant="scrollable"
+              allowScrollButtonsMobile
             >
               {tabs.map((tab) => {
                 return (
