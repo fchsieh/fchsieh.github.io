@@ -8,6 +8,7 @@ import Stack from "@mui/material/Stack";
 
 import particleParams from "./Particles.data";
 import Resume from "./data/resume.pdf";
+import AvatarImg from "../images/avatar.png";
 
 //CSS Styles
 const useStyles = makeStyles((theme) => ({
@@ -16,9 +17,10 @@ const useStyles = makeStyles((theme) => ({
     opacity: 0.5,
   },
   avatar: {
-    width: theme.spacing(15),
-    height: theme.spacing(15),
-    margin: theme.spacing(1),
+    width: "12rem",
+    height: "12rem",
+    margin: "0.5rem",
+    background: "#007cc7",
   },
   title: {
     color: "white",
@@ -76,7 +78,11 @@ const Header = () => {
           params={particleParams}
         />
         <Grid container justifyContent="center">
-          <Avatar className={classes.avatar} src="" alt="Fred Hsieh" />
+          <Avatar
+            className={classes.avatar}
+            src={AvatarImg}
+            alt="Fucheng Hsieh"
+          />
         </Grid>
         <Typography className={classes.title} variant="h3">
           Fucheng Hsieh
