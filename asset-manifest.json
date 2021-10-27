@@ -5,8 +5,8 @@
     "main.css": "/static/css/main.6a0f99e4.chunk.css",
     "main.js": "/static/js/main.42deb5fa.chunk.js",
     "main.js.map": "/static/js/main.42deb5fa.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.8bc920cf.js",
-    "runtime-main.js.map": "/static/js/runtime-main.8bc920cf.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a3d7a7f4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a3d7a7f4.js.map",
     "static/js/3.1e52f9df.chunk.js": "/static/js/3.1e52f9df.chunk.js",
     "static/js/3.1e52f9df.chunk.js.map": "/static/js/3.1e52f9df.chunk.js.map",
     "static/js/4.233d7b2f.chunk.js": "/static/js/4.233d7b2f.chunk.js",
@@ -25,8 +25,8 @@
     "static/js/9.4fd9f43c.chunk.js.map": "/static/js/9.4fd9f43c.chunk.js.map",
     "static/js/10.1e7ad036.chunk.js": "/static/js/10.1e7ad036.chunk.js",
     "static/js/10.1e7ad036.chunk.js.map": "/static/js/10.1e7ad036.chunk.js.map",
-    "static/js/11.71588866.chunk.js": "/static/js/11.71588866.chunk.js",
-    "static/js/11.71588866.chunk.js.map": "/static/js/11.71588866.chunk.js.map",
+    "static/js/11.7d3b37b1.chunk.js": "/static/js/11.7d3b37b1.chunk.js",
+    "static/js/11.7d3b37b1.chunk.js.map": "/static/js/11.7d3b37b1.chunk.js.map",
     "static/js/12.35e5e717.chunk.js": "/static/js/12.35e5e717.chunk.js",
     "static/js/12.35e5e717.chunk.js.map": "/static/js/12.35e5e717.chunk.js.map",
     "static/js/13.10f230be.chunk.js": "/static/js/13.10f230be.chunk.js",
@@ -40,6 +40,7 @@
     "static/js/6.32ebe1ee.chunk.js.LICENSE.txt": "/static/js/6.32ebe1ee.chunk.js.LICENSE.txt",
     "static/js/7.18b5baab.chunk.js.LICENSE.txt": "/static/js/7.18b5baab.chunk.js.LICENSE.txt",
     "static/media/about.f464a239.png": "/static/media/about.f464a239.png",
+    "static/media/avatar.999aab7e.png": "/static/media/avatar.999aab7e.png",
     "static/media/App.css": "/static/media/background.5b31a87d.jpg",
     "static/media/bbs.4c59a99c.png": "/static/media/bbs.4c59a99c.png",
     "static/media/blog.b390a6fa.png": "/static/media/blog.b390a6fa.png",
@@ -49,10 +50,10 @@
     "static/media/mongo.94082411.png": "/static/media/mongo.94082411.png",
     "static/media/nft.2a352477.png": "/static/media/nft.2a352477.png",
     "static/media/portfolio.cae5454e.png": "/static/media/portfolio.cae5454e.png",
-    "static/media/resume.9b0bec70.pdf": "/static/media/resume.9b0bec70.pdf"
+    "static/media/resume.eca39bb0.pdf": "/static/media/resume.eca39bb0.pdf"
   },
   "entrypoints": [
-    "static/js/runtime-main.8bc920cf.js",
+    "static/js/runtime-main.a3d7a7f4.js",
     "static/js/4.233d7b2f.chunk.js",
     "static/css/main.6a0f99e4.chunk.css",
     "static/js/main.42deb5fa.chunk.js"
