@@ -7,8 +7,9 @@ import { Typography, Avatar, Grid, Box, Button } from "@material-ui/core";
 import Stack from "@mui/material/Stack";
 
 import particleParams from "./Particles.data";
-import Resume from "./data/resume.pdf";
 import AvatarImg from "../images/avatar.png";
+const resumePDF =
+  "https://github.com/fchsieh/fchsieh.github.io/resume/resume.pdf";
 
 //CSS Styles
 const useStyles = makeStyles((theme) => ({
@@ -124,7 +125,7 @@ const Header = () => {
           <Button
             className={classes.subButton}
             variant="outlined"
-            href={Resume}
+            href={"https://docs.google.com/viewer?url=" + resumePDF}
             target="_blank"
           >
             Resume
