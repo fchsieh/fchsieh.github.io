@@ -9,7 +9,7 @@ import Stack from "@mui/material/Stack";
 import particleParams from "./Particles.data";
 import AvatarImg from "../images/avatar.png";
 const resumePDF =
-  "https://github.com/fchsieh/fchsieh.github.io/resume/resume.pdf";
+  "https://github.com/fchsieh/fchsieh.github.io/raw/master/resume/resume.pdf";
 
 //CSS Styles
 const useStyles = makeStyles((theme) => ({
